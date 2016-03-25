@@ -86,3 +86,19 @@ A admin panel for managing users, roles, permissions & crud.
     ```
     php make:auth
     ```
+    
+## Screenshots
+
+### UI
+![user](https://cloud.githubusercontent.com/assets/1708683/14051174/213e314a-f2eb-11e5-936e-24178e9bf13f.png)
+
+![roles](https://cloud.githubusercontent.com/assets/1708683/14051202/56c100fe-f2eb-11e5-87a1-bee47fd4b91b.png)
+
+![new role](https://cloud.githubusercontent.com/assets/1708683/14051206/5e34c7da-f2eb-11e5-8164-8dce161d8621.png)
+
+![give permission to a role](https://cloud.githubusercontent.com/assets/1708683/14051216/685f8f24-f2eb-11e5-8c4b-3c5575c62aa1.png)
+
+
+##Author
+
+[Sohel Amin](http://www.sohelamin.com)
