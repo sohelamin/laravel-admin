@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Session;
@@ -28,7 +29,9 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        $roles = Role::select('id', 'name', 'label')->get();
+
+        return view('admin.users.create', compact('roles'));
     }
 
     /**
@@ -38,9 +41,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['name' => 'required', 'email' => 'required', 'password' => 'required']);
+        $this->validate($request, ['name' => 'required', 'email' => 'required', 'password' => 'required', 'roles' => 'required']);
 
-        User::create($request->all());
+        $data = $request->except('password');
+        $data['password'] = bcrypt($request->password);
+        User::create($data);
+
+        foreach ($request->roles as $role) {
+            $user->assignRole($role);
+        }
 
         Session::flash('flash_message', 'User added!');
 
@@ -70,9 +79,15 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $roles = Role::select('id', 'name', 'label')->get();
 
-        return view('admin.users.edit', compact('user'));
+        $user = User::with('roles')->select('id', 'name', 'email')->findOrFail($id);
+        $user_roles = [];
+        foreach ($user->roles as $role) {
+            $user_roles[] = $role->name;
+        }
+
+        return view('admin.users.edit', compact('user', 'roles', 'user_roles'));
     }
 
     /**
@@ -84,10 +99,15 @@ class UsersController extends Controller
      */
     public function update($id, Request $request)
     {
-        $this->validate($request, ['name' => 'required', 'email' => 'required', 'password' => 'required']);
+        $this->validate($request, ['name' => 'required', 'email' => 'required', 'roles' => 'required']);
 
         $user = User::findOrFail($id);
         $user->update($request->all());
+
+        $user->roles()->detach();
+        foreach ($request->roles as $role) {
+            $user->assignRole($role);
+        }
 
         Session::flash('flash_message', 'User updated!');
 
