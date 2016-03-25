@@ -89,8 +89,7 @@ A admin panel for managing users, roles, permissions & crud.
     
 ## Screenshots
 
-### UI
-![user](https://cloud.githubusercontent.com/assets/1708683/14051174/213e314a-f2eb-11e5-936e-24178e9bf13f.png)
+![users](https://cloud.githubusercontent.com/assets/1708683/14051321/3ac04148-f2ec-11e5-934b-4a5b6478ac52.png)
 
 ![roles](https://cloud.githubusercontent.com/assets/1708683/14051202/56c100fe-f2eb-11e5-87a1-bee47fd4b91b.png)
 
