@@ -102,6 +102,8 @@ A admin panel for managing users, roles, permissions & crud.
 
 ![give permission to a role](https://cloud.githubusercontent.com/assets/1708683/14051216/685f8f24-f2eb-11e5-8c4b-3c5575c62aa1.png)
 
+![generator](https://cloud.githubusercontent.com/assets/1708683/14060938/6874fd52-f39d-11e5-96ca-a828856e70cc.png)
+
 
 ##Author
 
