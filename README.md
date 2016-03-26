@@ -16,7 +16,9 @@ A admin panel for managing users, roles, permissions & crud.
     ```php
     'providers' => [
         ...
-
+        
+        Appzcoder\LaravelAdmin\LaravelAdminServiceProvider::class,
+        // For crud generator & html
         Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
     ],
@@ -86,7 +88,7 @@ A admin panel for managing users, roles, permissions & crud.
 
 10. If you don't have authentication resources then run below command.
     ```
-    php make:auth
+    php artisan make:auth
     ```
 
 11. You can generate CRUD easily through generator tool.
