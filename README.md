@@ -37,7 +37,7 @@ A admin panel for managing users, roles, permissions & crud.
     php artisan vendor:publish
     ```
 
-6. Make sure your user model like below.
+6. Make sure your user model **/app/User.php** like below.
     ```php
     namespace App;
 
@@ -66,12 +66,14 @@ A admin panel for managing users, roles, permissions & crud.
         ];
     }
     ```
-7. Run migrate command.
+7. Make sure your AuthServiceProvider **/app/Providers/AuthServiceProvider.php** similiar [this file](https://github.com/appzcoder/laravel-admin/blob/master/src/publish/Providers/AuthServiceProvider.php).
+
+8. Run migrate command.
     ```
     php artisan migrate
     ```
 
-8. Put the routes definitions into **routes.php** file.
+9. Put the routes definitions into **routes.php** file.
 
     ```php
     Route::get('admin', 'Admin\\AdminController@index');
@@ -82,7 +84,24 @@ A admin panel for managing users, roles, permissions & crud.
     Route::resource('admin/users', 'Admin\\UsersController');
     ```
 
-9. If you don't have authentication resources then run below command.
+10. If you don't have authentication resources then run below command.
     ```
     php make:auth
     ```
+
+11. You can generate CRUD easily through generator tool.
+
+## Screenshots
+
+![users](https://cloud.githubusercontent.com/assets/1708683/14051377/97bd54ee-f2ec-11e5-98b4-ebc8f11aaa10.png)
+
+![roles](https://cloud.githubusercontent.com/assets/1708683/14051202/56c100fe-f2eb-11e5-87a1-bee47fd4b91b.png)
+
+![new role](https://cloud.githubusercontent.com/assets/1708683/14051206/5e34c7da-f2eb-11e5-8164-8dce161d8621.png)
+
+![give permission to a role](https://cloud.githubusercontent.com/assets/1708683/14051216/685f8f24-f2eb-11e5-8c4b-3c5575c62aa1.png)
+
+
+##Author
+
+[Sohel Amin](http://www.sohelamin.com)

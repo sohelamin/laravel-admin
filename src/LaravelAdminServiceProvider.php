@@ -41,6 +41,8 @@ class LaravelAdminServiceProvider extends ServiceProvider
         ]);
 
         $router->middleware('roles', \App\Http\Middleware\CheckRole::class);
+
+        include __DIR__ . '/routes.php';
     }
 
     /**
