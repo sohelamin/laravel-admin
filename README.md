@@ -1,5 +1,5 @@
 # Laravel Admin Panel
-A admin panel for managing users, roles, permissions & crud.
+An admin panel for managing users, roles, permissions & crud.
 
 ### Requirements
     Laravel >=5.1
