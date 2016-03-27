@@ -7,6 +7,7 @@
     <title>Laravel Admin</title>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css" rel="stylesheet">
+    <!-- You can change bootswatch theme easily learn more https://bootswatch.com/ -->
     <style>
         body {
             padding-top: 70px;
