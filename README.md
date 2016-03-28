@@ -93,7 +93,7 @@ An admin panel for managing users, roles, permissions & crud.
 
 11. You can generate CRUD easily through generator tool.
 
-## Installation
+## Usage
 
 1. Create some roles.
 
