@@ -93,7 +93,35 @@ An admin panel for managing users, roles, permissions & crud.
 
 11. You can generate CRUD easily through generator tool.
 
+## Installation
 
+1. Create some roles.
+2. Create some permissions.
+3. Give permission(s) to a role.
+4. Create user(s) with role.
+5. For checking authenticated user's role see below:
+    Check role anywhere
+    ```php
+    if(Auth::user()->hasRole('admin')) {
+        // Do admin stuff here
+    } else {
+        // Do nothing
+    }
+    ```
+    Check role in route middleware
+    ```php
+    Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'roles' => 'admin'], function () {
+       Route::get('/', ['uses' => 'AdminController@index']); 
+    });
+    ```
+6. For checking permissions see below:
+    ```php
+    if($user->can('permission-name')) {
+        // Do something
+    }
+    ```
+    Learn more about ACL from [here](https://laravel.com/docs/5.2/authorization)
+    
 ## Screenshots
 
 ![users](https://cloud.githubusercontent.com/assets/1708683/14051377/97bd54ee-f2ec-11e5-98b4-ebc8f11aaa10.png)
