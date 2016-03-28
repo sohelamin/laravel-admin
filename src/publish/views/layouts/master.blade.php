@@ -37,6 +37,7 @@
                     <li class="dropdown">
                         <a href="{{ url('/admin/permissions') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Permissions <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="{{ url('/admin/permissions') }}">All Permissions</a></li>
                             <li><a href="{{ url('/admin/give-role-permissions') }}">Give Role Permissions</a></li>
                         </ul>
                     </li>
