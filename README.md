@@ -96,31 +96,38 @@ An admin panel for managing users, roles, permissions & crud.
 ## Installation
 
 1. Create some roles.
+
 2. Create some permissions.
+
 3. Give permission(s) to a role.
+
 4. Create user(s) with role.
+
 5. For checking authenticated user's role see below:
-    Check role anywhere
+    
     ```php
+    // Check role anywhere
     if(Auth::user()->hasRole('admin')) {
         // Do admin stuff here
     } else {
         // Do nothing
     }
-    ```
-    Check role in route middleware
-    ```php
+
+    // Check role in route middleware
     Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'roles' => 'admin'], function () {
        Route::get('/', ['uses' => 'AdminController@index']); 
     });
     ```
+    
 6. For checking permissions see below:
+
     ```php
     if($user->can('permission-name')) {
         // Do something
     }
     ```
-    Learn more about ACL from [here](https://laravel.com/docs/5.2/authorization)
+    
+Learn more about ACL from [here](https://laravel.com/docs/5.2/authorization)
     
 ## Screenshots
 
