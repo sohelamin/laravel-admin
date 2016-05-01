@@ -16,7 +16,7 @@ An admin panel for managing users, roles, permissions & crud.
     ```php
     'providers' => [
         ...
-        
+
         Appzcoder\LaravelAdmin\LaravelAdminServiceProvider::class,
         // For crud generator & html
         Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
@@ -85,13 +85,14 @@ An admin panel for managing users, roles, permissions & crud.
     Route::resource('admin/permissions', 'Admin\\PermissionsController');
     Route::resource('admin/users', 'Admin\\UsersController');
     ```
+10. Overwrite default layout file with [this file](https://github.com/appzcoder/laravel-admin/blob/master/src/publish/views/layouts/app.blade.php) in order to use the package's layout file.
 
-10. If you don't have authentication resources then run below command.
+11. If you don't have authentication resources then run below command.
     ```
     php artisan make:auth
     ```
 
-11. You can generate CRUD easily through generator tool.
+12. You can generate CRUD easily through generator tool now.
 
 ## Usage
 
@@ -104,7 +105,7 @@ An admin panel for managing users, roles, permissions & crud.
 4. Create user(s) with role.
 
 5. For checking authenticated user's role see below:
-    
+
     ```php
     // Check role anywhere
     if(Auth::user()->hasRole('admin')) {
@@ -115,10 +116,10 @@ An admin panel for managing users, roles, permissions & crud.
 
     // Check role in route middleware
     Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'roles' => 'admin'], function () {
-       Route::get('/', ['uses' => 'AdminController@index']); 
+       Route::get('/', ['uses' => 'AdminController@index']);
     });
     ```
-    
+
 6. For checking permissions see below:
 
     ```php
@@ -126,9 +127,9 @@ An admin panel for managing users, roles, permissions & crud.
         // Do something
     }
     ```
-    
+
 Learn more about ACL from [here](https://laravel.com/docs/5.2/authorization)
-    
+
 ## Screenshots
 
 ![users](https://cloud.githubusercontent.com/assets/1708683/14051377/97bd54ee-f2ec-11e5-98b4-ebc8f11aaa10.png)

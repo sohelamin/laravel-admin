@@ -13,9 +13,9 @@ class AdminController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return void
      */
-    public function index(\Illuminate\Routing\Router $router)
+    public function index()
     {
         return view('admin.dashboard');
     }

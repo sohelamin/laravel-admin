@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
-    <h1>Users <a href="{{ url('admin/users/create') }}" class="btn btn-primary pull-right btn-sm">Add New User</a></h1>
+    <h1>Users <a href="{{ url('/admin/users/create') }}" class="btn btn-primary pull-right btn-sm">Add New User</a></h1>
     <div class="table">
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -16,14 +16,14 @@
                 {{-- */$x++;/* --}}
                 <tr>
                     <td>{{ $x }}</td>
-                    <td><a href="{{ url('admin/users', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->email }}</td>
+                    <td><a href="{{ url('/admin/users', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->email }}</td>
                     <td>
-                        <a href="{{ url('admin/users/' . $item->id . '/edit') }}">
+                        <a href="{{ url('/admin/users/' . $item->id . '/edit') }}">
                             <button type="submit" class="btn btn-primary btn-xs">Update</button>
                         </a> /
                         {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['admin/users', $item->id],
+                            'url' => ['/admin/users', $item->id],
                             'style' => 'display:inline'
                         ]) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}

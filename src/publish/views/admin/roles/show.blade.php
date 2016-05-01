@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
@@ -14,7 +14,7 @@
                 <tr>
                     <td>{{ $role->id }}</td> <td> {{ $role->name }} </td><td> {{ $role->label }} </td>
                 </tr>
-            </tbody>    
+            </tbody>
         </table>
     </div>
 

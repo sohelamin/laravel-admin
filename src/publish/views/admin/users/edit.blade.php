@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
@@ -7,7 +7,7 @@
 
     {!! Form::model($user, [
         'method' => 'PATCH',
-        'url' => ['admin/users', $user->id],
+        'url' => ['/admin/users', $user->id],
         'class' => 'form-horizontal'
     ]) !!}
 

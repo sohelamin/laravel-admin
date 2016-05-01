@@ -1,11 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
     <h1>Create New User</h1>
     <hr/>
 
-    {!! Form::open(['url' => 'admin/users', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['url' => '/admin/users', 'class' => 'form-horizontal']) !!}
 
     <div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
         {!! Form::label('name', 'Name: ', ['class' => 'col-sm-3 control-label']) !!}

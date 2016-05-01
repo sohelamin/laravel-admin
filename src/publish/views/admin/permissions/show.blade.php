@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
@@ -14,7 +14,7 @@
                 <tr>
                     <td>{{ $permission->id }}</td> <td> {{ $permission->name }} </td><td> {{ $permission->label }} </td>
                 </tr>
-            </tbody>    
+            </tbody>
         </table>
     </div>
 

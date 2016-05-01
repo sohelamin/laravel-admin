@@ -1,11 +1,10 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
     <h1 class="text-center">Generator</h1>
 
-
-    <form class="form-horizontal" method="post" action="{{ url('admin/generator') }}">
+    <form class="form-horizontal" method="post" action="{{ url('/admin/generator') }}">
 
         <div class="form-group">
             <label for="crud_name" class="col-md-4 control-label">Crud Name:</label>

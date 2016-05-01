@@ -1,11 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 
     <h1>Give Permission to Role</h1>
     <hr/>
 
-    {!! Form::open(['method' => 'POST', 'url' => ['admin/give-role-permissions'], 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['method' => 'POST', 'url' => ['/admin/give-role-permissions'], 'class' => 'form-horizontal']) !!}
 
     <div class="form-group">
         {!! Form::label('name', 'Role: ', ['class' => 'col-sm-3 control-label']) !!}

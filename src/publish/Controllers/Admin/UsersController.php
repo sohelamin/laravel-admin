@@ -13,7 +13,7 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return void
      */
     public function index()
     {
@@ -25,7 +25,7 @@ class UsersController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return void
      */
     public function create()
     {
@@ -37,7 +37,9 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @param  \Illuminate\Http\Request $request
+     *
+     * @return void
      */
     public function store(Request $request)
     {
@@ -61,7 +63,7 @@ class UsersController extends Controller
      *
      * @param  int  $id
      *
-     * @return Response
+     * @return void
      */
     public function show($id)
     {
@@ -75,7 +77,7 @@ class UsersController extends Controller
      *
      * @param  int  $id
      *
-     * @return Response
+     * @return void
      */
     public function edit($id)
     {
@@ -93,9 +95,10 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int      $id
+     * @param  \Illuminate\Http\Request  $request
      *
-     * @return Response
+     * @return void
      */
     public function update($id, Request $request)
     {
@@ -119,7 +122,7 @@ class UsersController extends Controller
      *
      * @param  int  $id
      *
-     * @return Response
+     * @return void
      */
     public function destroy($id)
     {
