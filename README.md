@@ -85,12 +85,13 @@ An admin panel for managing users, roles, permissions & crud.
     Route::resource('admin/permissions', 'Admin\\PermissionsController');
     Route::resource('admin/users', 'Admin\\UsersController');
     ```
-10. Overwrite default layout file with [this file](https://github.com/appzcoder/laravel-admin/blob/master/src/publish/views/layouts/app.blade.php) in order to use the package's layout file.
 
-11. If you don't have authentication resources then run below command.
+10. If you don't have authentication resources then run below command.
     ```
     php artisan make:auth
     ```
+
+11. Overwrite default layout file with [this file](https://github.com/appzcoder/laravel-admin/blob/master/src/publish/views/layouts/app.blade.php) in order to use the package's layout file.
 
 12. You can generate CRUD easily through generator tool now.
 
