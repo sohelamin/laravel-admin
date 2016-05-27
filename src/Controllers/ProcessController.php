@@ -37,8 +37,8 @@ class ProcessController extends Controller
             $fieldsArray = [];
             $x = 0;
             foreach ($request->fields as $field) {
-                $required = ($request->fields_required[$x] == 1) ? ':required' : '';
-                $fieldsArray[] = $field . ':' . $request->fields_type[$x] . $required;
+                $required = ($request->fields_required[$x] == 1) ? '#required' : '';
+                $fieldsArray[] = $field . '#' . $request->fields_type[$x] . $required;
 
                 $x++;
             }
