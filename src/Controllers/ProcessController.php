@@ -35,15 +35,23 @@ class ProcessController extends Controller
 
         if ($request->has('fields')) {
             $fieldsArray = [];
+            $validationsArray = [];
             $x = 0;
             foreach ($request->fields as $field) {
-                $required = ($request->fields_required[$x] == 1) ? '#required' : '';
-                $fieldsArray[] = $field . '#' . $request->fields_type[$x] . $required;
+                if ($request->fields_required[$x] == 1) {
+                    $validationsArray[] = $field;
+                }
+
+                $fieldsArray[] = $field . '#' . $request->fields_type[$x];
 
                 $x++;
             }
 
-            $commandArg['--fields'] = implode(",", $fieldsArray);
+            $commandArg['--fields'] = implode(";", $fieldsArray);
+        }
+
+        if (!empty($validationsArray)) {
+            $commandArg['--validations'] = implode("#required;", $validationsArray) . "#required";
         }
 
         if ($request->has('route')) {
@@ -54,8 +62,12 @@ class ProcessController extends Controller
             $commandArg['--view-path'] = $request->view_path;
         }
 
-        if ($request->has('namespace')) {
-            $commandArg['--namespace'] = $request->namespace;
+        if ($request->has('controller_namespace')) {
+            $commandArg['--controller-namespace'] = $request->controller_namespace;
+        }
+
+        if ($request->has('model_namespace')) {
+            $commandArg['--model-namespace'] = $request->model_namespace;
         }
 
         if ($request->has('route_group')) {

@@ -28,11 +28,11 @@ An admin panel for managing users, roles, permissions & crud.
     'aliases' => [
         ...
 
-        'Form'      => Collective\Html\FormFacade::class,
-        'HTML'      => Collective\Html\HtmlFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'HTML' => Collective\Html\HtmlFacade::class,
     ],
     ```
-4. Run **composer du**
+4. Run ```composer dump-autoload```
 
 5. Publish the resource file.
     ```
@@ -43,11 +43,12 @@ An admin panel for managing users, roles, permissions & crud.
     ```php
     namespace App;
 
+    use Illuminate\Notifications\Notifiable;
     use Illuminate\Foundation\Auth\User as Authenticatable;
 
     class User extends Authenticatable
     {
-        use HasRoles;
+        use Notifiable, HasRoles;
 
         /**
          * The attributes that are mass assignable.
@@ -129,7 +130,7 @@ An admin panel for managing users, roles, permissions & crud.
     }
     ```
 
-Learn more about ACL from [here](https://laravel.com/docs/5.2/authorization)
+Learn more about ACL from [here](https://laravel.com/docs/5.3/authorization)
 
 ## Screenshots
 

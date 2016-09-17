@@ -13,9 +13,15 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="namespace" class="col-md-4 control-label">Namespace:</label>
+            <label for="controller_namespace" class="col-md-4 control-label">Controller Namespace:</label>
             <div class="col-md-4">
-                <input type="text" name="namespace" class="form-control" id="namespace" placeholder="Admin">
+                <input type="text" name="controller_namespace" class="form-control" id="controller_namespace" placeholder="Admin">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="model_namespace" class="col-md-4 control-label">Model Namespace:</label>
+            <div class="col-md-4">
+                <input type="text" name="model_namespace" class="form-control" id="model_namespace" placeholder="App">
             </div>
         </div>
         <div class="form-group">
