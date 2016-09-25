@@ -39,35 +39,13 @@ An admin panel for managing users, roles, permissions & crud.
     php artisan vendor:publish
     ```
 
-6. Make sure your user model **/app/User.php** like below.
+6. Make sure your user model's has a ```HasRoles``` trait **/app/User.php**.
     ```php
-    namespace App;
-
-    use Illuminate\Notifications\Notifiable;
-    use Illuminate\Foundation\Auth\User as Authenticatable;
-
     class User extends Authenticatable
     {
         use Notifiable, HasRoles;
-
-        /**
-         * The attributes that are mass assignable.
-         *
-         * @var array
-         */
-        protected $fillable = [
-            'name', 'email', 'password',
-        ];
-
-        /**
-         * The attributes that should be hidden for arrays.
-         *
-         * @var array
-         */
-        protected $hidden = [
-            'password', 'remember_token',
-        ];
-    }
+        
+        ...
     ```
 7. Make sure your AuthServiceProvider **/app/Providers/AuthServiceProvider.php** similiar [this file](https://github.com/appzcoder/laravel-admin/blob/master/src/publish/Providers/AuthServiceProvider.php).
 
