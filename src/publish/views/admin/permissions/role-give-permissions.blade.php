@@ -1,46 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Give Permission to Role</div>
+                    <div class="panel-body">
 
-    <h1>Give Permission to Role</h1>
-    <hr/>
+                        @if ($errors->any())
+                            <ul class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
 
-    {!! Form::open(['method' => 'POST', 'url' => ['/admin/give-role-permissions'], 'class' => 'form-horizontal']) !!}
+                        {!! Form::open(['method' => 'POST', 'url' => ['/admin/give-role-permissions'], 'class' => 'form-horizontal']) !!}
 
-    <div class="form-group">
-        {!! Form::label('name', 'Role: ', ['class' => 'col-sm-3 control-label']) !!}
-        <div class="col-sm-6">
-            <select class="roles form-control" id="role" name="role">
-                @foreach($roles as $role)
-                <option value="{{ $role->name }}">{{ $role->label }}</option>
-                @endforeach()
-            </select>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : ''}}">
+                            {!! Form::label('name', 'Role: ', ['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-6">
+                                <select class="roles form-control" id="role" name="role">
+                                    @foreach($roles as $role)
+                                    <option value="{{ $role->name }}">{{ $role->label }}</option>
+                                    @endforeach()
+                                </select>
+                                {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('label') ? ' has-error' : ''}}">
+                            {!! Form::label('label', 'Permissions: ', ['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-6">
+                                <select class="permissions form-control" id="permissions" name="permissions[]" multiple="multiple">
+                                    @foreach($permissions as $permission)
+                                    <option value="{{ $permission->name }}">{{ $permission->label }}</option>
+                                    @endforeach()
+                                </select>
+                                {!! $errors->first('label', '<p class="help-block">:message</p>') !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-4 col-md-4">
+                                {!! Form::submit('Grant', ['class' => 'btn btn-primary']) !!}
+                            </div>
+                        </div>
+                        {!! Form::close() !!}
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        {!! Form::label('label', 'Permissions: ', ['class' => 'col-sm-3 control-label']) !!}
-        <div class="col-sm-6">
-            <select class="permissions form-control" id="permissions" name="permissions[]" multiple="multiple">
-                @foreach($permissions as $permission)
-                <option value="{{ $permission->name }}">{{ $permission->label }}</option>
-                @endforeach()
-            </select>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-3">
-            {!! Form::submit('Grant', ['class' => 'btn btn-primary form-control']) !!}
-        </div>
-    </div>
-    {!! Form::close() !!}
-
-    @if ($errors->any())
-        <ul class="alert alert-danger">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
-
 @endsection
