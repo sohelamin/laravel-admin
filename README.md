@@ -12,7 +12,7 @@ An admin panel for managing users, roles, permissions & crud.
     composer require appzcoder/laravel-admin:dev-master
     ```
 
-2. Add service provider to **/config/app.php** file.
+2. Add service provider to **config/app.php** file.
     ```php
     'providers' => [
         ...
@@ -23,7 +23,7 @@ An admin panel for managing users, roles, permissions & crud.
         Collective\Html\HtmlServiceProvider::class,
     ],
     ```
-3. Add **Collective/Html** aliases to **/config/app.php** file.
+3. Add **Collective/Html** aliases to **config/app.php** file.
     ```php
     'aliases' => [
         ...
@@ -39,7 +39,7 @@ An admin panel for managing users, roles, permissions & crud.
     php artisan vendor:publish
     ```
 
-6. Make sure your user model's has a ```HasRoles``` trait **/app/User.php**.
+6. Make sure your user model's has a ```HasRoles``` trait **app/User.php**.
     ```php
     class User extends Authenticatable
     {
@@ -47,14 +47,14 @@ An admin panel for managing users, roles, permissions & crud.
         
         ...
     ```
-7. Make sure your AuthServiceProvider **/app/Providers/AuthServiceProvider.php** similiar [this file](https://github.com/appzcoder/laravel-admin/blob/master/src/publish/Providers/AuthServiceProvider.php).
+7. Make sure your AuthServiceProvider **app/Providers/AuthServiceProvider.php** similiar [this file](https://github.com/appzcoder/laravel-admin/blob/master/src/publish/Providers/AuthServiceProvider.php).
 
 8. Run migrate command.
     ```
     php artisan migrate
     ```
 
-9. Put the routes definitions into **routes.php** file.
+9. Put the routes definitions into ```Route``` file.
 
     ```php
     Route::get('admin', 'Admin\\AdminController@index');
@@ -112,15 +112,17 @@ Learn more about ACL from [here](https://laravel.com/docs/5.3/authorization)
 
 ## Screenshots
 
-![users](https://cloud.githubusercontent.com/assets/1708683/14051377/97bd54ee-f2ec-11e5-98b4-ebc8f11aaa10.png)
+![users](https://cloud.githubusercontent.com/assets/1708683/18842802/19563d0e-8438-11e6-8d2f-502dd121306e.png)
 
-![roles](https://cloud.githubusercontent.com/assets/1708683/14051202/56c100fe-f2eb-11e5-87a1-bee47fd4b91b.png)
+![roles](https://cloud.githubusercontent.com/assets/1708683/18842797/19400692-8438-11e6-9e4a-801fd55f3111.png)
 
-![new role](https://cloud.githubusercontent.com/assets/1708683/14051206/5e34c7da-f2eb-11e5-8164-8dce161d8621.png)
+![new role](https://cloud.githubusercontent.com/assets/1708683/18842801/1944fd96-8438-11e6-8428-afe6af3ceb46.png)
 
-![give permission to a role](https://cloud.githubusercontent.com/assets/1708683/14051216/685f8f24-f2eb-11e5-8c4b-3c5575c62aa1.png)
+![permissions](https://cloud.githubusercontent.com/assets/1708683/18842799/19417130-8438-11e6-9119-b4961ba2c758.png)
 
-![generator](https://cloud.githubusercontent.com/assets/1708683/14060938/6874fd52-f39d-11e5-96ca-a828856e70cc.png)
+![give permission to a role](https://cloud.githubusercontent.com/assets/1708683/18842800/1943a70c-8438-11e6-957a-a5c5cbf38c90.png)
+
+![generator](https://cloud.githubusercontent.com/assets/1708683/18842798/1940cd70-8438-11e6-8619-7a9a8ab4bfa5.png)
 
 
 ##Author
