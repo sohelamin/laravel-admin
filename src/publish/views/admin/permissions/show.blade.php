@@ -9,7 +9,7 @@
                     <div class="panel-body">
 
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover">
+                            <table class="table table-borderless">
                                 <thead>
                                     <tr>
                                         <th>ID.</th> <th>Name</th><th>Label</th>

@@ -33,14 +33,7 @@
                             <div class="col-md-6">
                                 <select class="roles" id="roles" name="roles[]" multiple="multiple">
                                     @foreach($roles as $role)
-                                    @php
-                                    if (in_array($role->name, $user_roles)) {
-                                        $selected = 'selected="selected"';
-                                    } else {
-                                        $selected = '';
-                                    }
-                                    @endphp
-                                    <option value="{{ $role->name }}" {{ $selected }}>{{ $role->label }}</option>
+                                    <option value="{{ $role->name }}" {{ in_array($role->name, $user_roles) ? 'selected="selected"' : '' }}>{{ $role->label }}</option>
                                     @endforeach()
                                 </select>
                             </div>

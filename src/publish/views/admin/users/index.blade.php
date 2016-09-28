@@ -12,17 +12,17 @@
                         <br/>
                         <br/>
 
-                        <div class="table">
-                            <table class="table table-bordered table-striped table-hover">
+                        <div class="table-responsive">
+                            <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>S.No</th><th>Name</th><th>Email</th><th>Actions</th>
+                                        <th>ID</th><th>Name</th><th>Email</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($users as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->id }}</td>
                                         <td><a href="{{ url('/admin/users', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->email }}</td>
                                         <td>
                                             <a href="{{ url('/admin/users/' . $item->id . '/edit') }}">
