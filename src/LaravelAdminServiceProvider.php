@@ -52,6 +52,8 @@ class LaravelAdminServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        $this->commands(
+            'Appzcoder\LaravelAdmin\LaravelAdminCommand'
+        );
     }
 }

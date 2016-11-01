@@ -34,9 +34,9 @@ An admin panel for managing users, roles, permissions & crud.
     ```
 4. Run ```composer dump-autoload```
 
-5. Publish the resource file.
+5. Install the admin package.
     ```
-    php artisan vendor:publish
+    php artisan laravel-admin:install
     ```
 
 6. Make sure your user model's has a ```HasRoles``` trait **app/User.php**.
@@ -44,35 +44,11 @@ An admin panel for managing users, roles, permissions & crud.
     class User extends Authenticatable
     {
         use Notifiable, HasRoles;
-        
+
         ...
     ```
-7. Make sure your AuthServiceProvider **app/Providers/AuthServiceProvider.php** similiar [this file](https://github.com/appzcoder/laravel-admin/blob/master/src/publish/Providers/AuthServiceProvider.php).
 
-8. Run migrate command.
-    ```
-    php artisan migrate
-    ```
-
-9. Put the routes definitions into ```Route``` file.
-
-    ```php
-    Route::get('admin', 'Admin\\AdminController@index');
-    Route::get('admin/give-role-permissions', 'Admin\\AdminController@getGiveRolePermissions');
-    Route::post('admin/give-role-permissions', 'Admin\\AdminController@postGiveRolePermissions');
-    Route::resource('admin/roles', 'Admin\\RolesController');
-    Route::resource('admin/permissions', 'Admin\\PermissionsController');
-    Route::resource('admin/users', 'Admin\\UsersController');
-    ```
-
-10. If you don't have authentication resources then run below command.
-    ```
-    php artisan make:auth
-    ```
-
-11. Overwrite default layout file with [this file](https://github.com/appzcoder/laravel-admin/blob/master/src/publish/views/layouts/app.blade.php) in order to use the package's layout file.
-
-12. You can generate CRUD easily through generator tool now.
+7. You can generate CRUD easily through generator tool now.
 
 ## Usage
 
