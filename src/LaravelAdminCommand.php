@@ -70,10 +70,6 @@ EOD;
         $this->info("Generating the authentication scaffolding");
         $this->call('make:auth');
 
-        $this->info("Overriding the package layout");
-        $contents = File::get(__DIR__ . '/publish/views/layouts/app.blade.php');
-        File::put(base_path('resources/views/layouts/app.blade.php'), $contents);
-
         $this->info("Overriding the AuthServiceProvider");
         $contents = File::get(__DIR__ . '/publish/Providers/AuthServiceProvider.php');
         File::put(app_path('Providers/AuthServiceProvider.php'), $contents);

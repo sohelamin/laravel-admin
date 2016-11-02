@@ -44,16 +44,6 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/admin') }}">Dashboard <span class="sr-only">(current)</span></a></li>
-                        <li><a href="{{ url('/admin/users') }}">Users</a></li>
-                        <li><a href="{{ url('/admin/roles') }}">Roles</a></li>
-                        <li class="dropdown">
-                            <a href="{{ url('/admin/permissions') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Permissions <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ url('/admin/permissions') }}">All Permissions</a></li>
-                                <li><a href="{{ url('/admin/give-role-permissions') }}">Give Role Permissions</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="{{ url('/admin/generator') }}">Generator</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -89,9 +79,11 @@
         </nav>
 
         @if (Session::has('flash_message'))
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                {{ Session::get('flash_message') }}
+            <div class="container">
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ Session::get('flash_message') }}
+                </div>
             </div>
         @endif
 
