@@ -11,6 +11,7 @@
                     <div class="panel-body">
 
                         <form class="form-horizontal" method="post" action="{{ url('/admin/generator') }}">
+                            {{ csrf_field() }}
 
                             <div class="form-group">
                                 <label for="crud_name" class="col-md-4 control-label">Crud Name:</label>

@@ -104,8 +104,13 @@ class UsersController extends Controller
     {
         $this->validate($request, ['name' => 'required', 'email' => 'required', 'roles' => 'required']);
 
+        $data = $request->except('password');
+        if ($request->has('password')) {
+            $data['password'] = bcrypt($request->password);
+        }
+
         $user = User::findOrFail($id);
-        $user->update($request->all());
+        $user->update($data);
 
         $user->roles()->detach();
         foreach ($request->roles as $role) {
