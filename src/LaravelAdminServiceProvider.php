@@ -53,8 +53,11 @@ class LaravelAdminServiceProvider extends ServiceProvider
 
         include __DIR__ . '/routes.php';
 
-        $menus = json_decode(File::get(base_path('resources/laravel-admin/menus.json')));
-        view()->share('laravelAdminMenus', $menus);
+        $menus = [];
+        if (File::exists(base_path('resources/laravel-admin/menus.json'))) {
+            $menus = json_decode(File::get(base_path('resources/laravel-admin/menus.json')));
+            view()->share('laravelAdminMenus', $menus);
+        }
     }
 
     /**
