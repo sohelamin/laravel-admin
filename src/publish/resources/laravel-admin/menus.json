@@ -1,0 +1,1 @@
+{"menus":[{"section":"User Manager","items":[{"title":"Users","url":"\/admin\/users"},{"title":"Roles","url":"\/admin\/roles"},{"title":"Permissions","url":"\/admin\/permissions"},{"title":"Give Role Permissions","url":"\/admin\/give-role-permissions"}]},{"section":"Tools","items":[{"title":"Generator","url":"\/admin\/generator"}]},{"section":"Modules","items":[]}]}

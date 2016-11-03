@@ -4,6 +4,7 @@ namespace Appzcoder\LaravelAdmin\Controllers;
 
 use App\Http\Controllers\Controller;
 use Artisan;
+use File;
 use Illuminate\Http\Request;
 use Response;
 use Session;
@@ -76,11 +77,31 @@ class ProcessController extends Controller
 
         try {
             Artisan::call('crud:generate', $commandArg);
+
+            $menus = json_decode(File::get(base_path('resources/laravel-admin/menus.json')));
+
+            $name = $commandArg['name'];
+            $routeName = ($commandArg['--route-group']) ? $commandArg['--route-group'] . '/' . snake_case($name, '-') : snake_case($name, '-');
+
+            $menus->menus = array_map(function ($menu) use ($name, $routeName) {
+                if ($menu->section == 'Modules') {
+                    array_push($menu->items, (object) [
+                        'title' => $name,
+                        'url' => '/' . $routeName,
+                    ]);
+                }
+
+                return $menu;
+            }, $menus->menus);
+
+            File::put(base_path('resources/laravel-admin/menus.json'), json_encode($menus));
+
+            Artisan::call('migrate');
         } catch (\Exception $e) {
             return Response::make($e->getMessage(), 500);
         }
 
-        Session::flash('flash_message', 'Your CRUD has been generated. Just run migrate command.');
+        Session::flash('flash_message', 'Your CRUD has been generated. See on the menu.');
 
         return redirect('admin/generator');
     }

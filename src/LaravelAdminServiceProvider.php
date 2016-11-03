@@ -2,6 +2,7 @@
 
 namespace Appzcoder\LaravelAdmin;
 
+use File;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelAdminServiceProvider extends ServiceProvider
@@ -40,9 +41,20 @@ class LaravelAdminServiceProvider extends ServiceProvider
             __DIR__ . '/publish/views/' => base_path('resources/views'),
         ]);
 
+        $this->publishes([
+            __DIR__ . '/publish/resources/' => base_path('resources'),
+        ]);
+
+        $this->publishes([
+            __DIR__ . '/publish/crudgenerator.php' => config_path('crudgenerator.php'),
+        ]);
+
         $router->middleware('roles', \App\Http\Middleware\CheckRole::class);
 
         include __DIR__ . '/routes.php';
+
+        $menus = json_decode(File::get(base_path('resources/laravel-admin/menus.json')));
+        view()->share('laravelAdminMenus', $menus);
     }
 
     /**

@@ -40,7 +40,7 @@ class LaravelAdminCommand extends Command
     public function handle()
     {
         $this->info("Publishing the assets");
-        $this->call('vendor:publish');
+        $this->call('vendor:publish', ['--provider', 'Appzcoder\LaravelAdmin\LaravelAdminServiceProvider']);
 
         $this->info("Dumping the composer autoload");
         (new Process('composer dump-autoload'))->run();
