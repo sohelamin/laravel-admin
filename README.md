@@ -88,17 +88,17 @@ Learn more about ACL from [here](https://laravel.com/docs/5.3/authorization)
 
 ## Screenshots
 
-![users](https://cloud.githubusercontent.com/assets/1708683/18842802/19563d0e-8438-11e6-8d2f-502dd121306e.png)
+![roles](https://cloud.githubusercontent.com/assets/1708683/19971502/70eff1f6-a209-11e6-8fa0-1ff381198f1a.png)
 
-![roles](https://cloud.githubusercontent.com/assets/1708683/18842797/19400692-8438-11e6-9e4a-801fd55f3111.png)
+![new role](https://cloud.githubusercontent.com/assets/1708683/19971566/98785114-a209-11e6-9a2d-d027c13eb2d6.png)
 
-![new role](https://cloud.githubusercontent.com/assets/1708683/18842801/1944fd96-8438-11e6-8428-afe6af3ceb46.png)
+![permissions](https://cloud.githubusercontent.com/assets/1708683/19971588/a90eafbe-a209-11e6-8631-f2489dc6c547.png)
 
-![permissions](https://cloud.githubusercontent.com/assets/1708683/18842799/19417130-8438-11e6-9119-b4961ba2c758.png)
+![give permission to a role](https://cloud.githubusercontent.com/assets/1708683/19971609/bb4fa1a6-a209-11e6-891b-5b10629ea1a9.png)
 
-![give permission to a role](https://cloud.githubusercontent.com/assets/1708683/18842800/1943a70c-8438-11e6-957a-a5c5cbf38c90.png)
+![users](https://cloud.githubusercontent.com/assets/1708683/19971636/cb71096c-a209-11e6-964f-a60d7f84b434.png)
 
-![generator](https://cloud.githubusercontent.com/assets/1708683/18842798/1940cd70-8438-11e6-8619-7a9a8ab4bfa5.png)
+![generator](https://cloud.githubusercontent.com/assets/1708683/19971653/dc239810-a209-11e6-8348-83ff1eb4add6.png)
 
 
 ##Author
