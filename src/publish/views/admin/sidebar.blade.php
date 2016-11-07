@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-3">
 
     @foreach($laravelAdminMenus->menus as $section)
         @if($section->items)
