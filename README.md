@@ -64,7 +64,7 @@ An admin panel for managing users, roles, permissions & crud.
 
     ```php
     // Check role anywhere
-    if(Auth::user()->hasRole('admin')) {
+    if(Auth::check() && Auth::user()->hasRole('admin')) {
         // Do admin stuff here
     } else {
         // Do nothing
