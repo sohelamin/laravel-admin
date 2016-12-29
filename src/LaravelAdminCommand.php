@@ -63,6 +63,8 @@ Route::post('admin/give-role-permissions', 'Admin\\AdminController@postGiveRoleP
 Route::resource('admin/roles', 'Admin\\RolesController');
 Route::resource('admin/permissions', 'Admin\\PermissionsController');
 Route::resource('admin/users', 'Admin\\UsersController');
+Route::get('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
+Route::post('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
 EOD;
 
         File::append($routeFile, "\n" . $routes);
