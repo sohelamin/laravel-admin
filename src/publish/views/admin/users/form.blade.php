@@ -22,11 +22,7 @@
 <div class="form-group{{ $errors->has('roles') ? ' has-error' : ''}}">
     {!! Form::label('role', 'Role: ', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        <select class="roles form-control" id="roles" name="roles[]" multiple="multiple">
-            @foreach($roles as $role)
-            <option value="{{ $role->name }}">{{ $role->label }}</option>
-            @endforeach()
-        </select>
+        {!! Form::select('roles[]', $roles, isset($user_roles) ? $user_roles : [], ['class' => 'form-control', 'multiple' => true]) !!}
     </div>
 </div>
 <div class="form-group">
