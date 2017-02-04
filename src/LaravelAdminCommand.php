@@ -39,6 +39,13 @@ class LaravelAdminCommand extends Command
      */
     public function handle()
     {
+        try {
+            \App\User::first();
+        } catch (\Illuminate\Database\QueryException $ex) {
+            $this->error("Config your database first");
+            exit();
+        }
+
         $this->info("Publishing the assets");
         $this->call('vendor:publish', ['--provider' => 'Appzcoder\LaravelAdmin\LaravelAdminServiceProvider']);
 
@@ -69,8 +76,10 @@ EOD;
 
         File::append($routeFile, "\n" . $routes);
 
-        $this->info("Generating the authentication scaffolding");
-        $this->call('make:auth');
+        if (\App::VERSION() >= '5.2') {
+            $this->info("Generating the authentication scaffolding");
+            $this->call('make:auth');
+        }
 
         $this->info("Overriding the AuthServiceProvider");
         $contents = File::get(__DIR__ . '/publish/Providers/AuthServiceProvider.php');
