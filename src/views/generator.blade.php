@@ -26,12 +26,6 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="model_namespace" class="col-md-4 control-label">Model Namespace:</label>
-                                <div class="col-md-6">
-                                    <input type="text" name="model_namespace" class="form-control" id="model_namespace" placeholder="App">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="route_group" class="col-md-4 control-label">Route Group Prefix:</label>
                                 <div class="col-md-6">
                                     <input type="text" name="route_group" class="form-control" id="route_group" placeholder="admin">

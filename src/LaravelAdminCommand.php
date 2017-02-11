@@ -46,8 +46,14 @@ class LaravelAdminCommand extends Command
             exit();
         }
 
+        if (\App::VERSION() >= '5.2') {
+            $this->info("Generating the authentication scaffolding");
+            $this->call('make:auth');
+        }
+
         $this->info("Publishing the assets");
-        $this->call('vendor:publish', ['--provider' => 'Appzcoder\LaravelAdmin\LaravelAdminServiceProvider']);
+        $this->call('vendor:publish', ['--provider' => 'Appzcoder\CrudGenerator\CrudGeneratorServiceProvider', '--force' => true]);
+        $this->call('vendor:publish', ['--provider' => 'Appzcoder\LaravelAdmin\LaravelAdminServiceProvider', '--force' => true]);
 
         $this->info("Dumping the composer autoload");
         (new Process('composer dump-autoload'))->run();
@@ -76,13 +82,8 @@ EOD;
 
         File::append($routeFile, "\n" . $routes);
 
-        if (\App::VERSION() >= '5.2') {
-            $this->info("Generating the authentication scaffolding");
-            $this->call('make:auth');
-        }
-
         $this->info("Overriding the AuthServiceProvider");
-        $contents = File::get(__DIR__ . '/publish/Providers/AuthServiceProvider.php');
+        $contents = File::get(__DIR__ . '/../publish/Providers/AuthServiceProvider.php');
         File::put(app_path('Providers/AuthServiceProvider.php'), $contents);
 
         $this->info("Successfully installed Laravel Admin!");
