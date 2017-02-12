@@ -45,8 +45,6 @@ class LaravelAdminServiceProvider extends ServiceProvider
             __DIR__ . '/../publish/crudgenerator.php' => config_path('crudgenerator.php'),
         ]);
 
-        $router->middleware('roles', \App\Http\Middleware\CheckRole::class);
-
         $menus = [];
         if (File::exists(base_path('resources/laravel-admin/menus.json'))) {
             $menus = json_decode(File::get(base_path('resources/laravel-admin/menus.json')));

@@ -61,6 +61,13 @@ An admin panel for managing users, roles, permissions & crud.
 4. Create user(s) with role.
 
 5. For checking authenticated user's role see below:
+    ```php
+    // Add roles middleware in app/Http/Kernel.php
+    protected $routeMiddleware = [
+        ...
+        'roles' => \App\Http\Middleware\CheckRole::class,
+    ];
+    ```
 
     ```php
     // Check role anywhere
