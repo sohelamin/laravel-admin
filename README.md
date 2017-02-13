@@ -78,7 +78,7 @@ An admin panel for managing users, roles, permissions & crud.
     }
 
     // Check role in route middleware
-    Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'roles' => 'admin'], function () {
+    Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'roles' => 'admin'], function () {
        Route::get('/', ['uses' => 'AdminController@index']);
     });
     ```
