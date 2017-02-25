@@ -14,9 +14,17 @@ class PermissionsController extends Controller
      *
      * @return void
      */
-    public function index()
+    public function index(Request $request)
     {
-        $permissions = Permission::paginate(15);
+        $keyword = $request->get('search');
+        $perPage = 15;
+
+        if (!empty($keyword)) {
+            $permissions = Permission::where('name', 'LIKE', "%$keyword%")->orWhere('label', 'LIKE', "%$keyword%")
+                ->paginate($perPage);
+        } else {
+            $permissions = Permission::paginate($perPage);
+        }
 
         return view('admin.permissions.index', compact('permissions'));
     }

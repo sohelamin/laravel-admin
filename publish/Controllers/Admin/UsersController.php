@@ -15,9 +15,17 @@ class UsersController extends Controller
      *
      * @return void
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::paginate(15);
+        $keyword = $request->get('search');
+        $perPage = 15;
+
+        if (!empty($keyword)) {
+            $users = User::where('name', 'LIKE', "%$keyword%")->orWhere('email', 'LIKE', "%$keyword%")
+                ->paginate($perPage);
+        } else {
+            $users = User::paginate($perPage);
+        }
 
         return view('admin.users.index', compact('users'));
     }

@@ -14,9 +14,17 @@ class RolesController extends Controller
      *
      * @return void
      */
-    public function index()
+    public function index(Request $request)
     {
-        $roles = Role::paginate(15);
+        $keyword = $request->get('search');
+        $perPage = 15;
+
+        if (!empty($keyword)) {
+            $roles = Role::where('name', 'LIKE', "%$keyword%")->orWhere('label', 'LIKE', "%$keyword%")
+                ->paginate($perPage);
+        } else {
+            $roles = Role::paginate($perPage);
+        }
 
         return view('admin.roles.index', compact('roles'));
     }
