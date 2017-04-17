@@ -108,6 +108,6 @@ Learn more about ACL from [here](https://laravel.com/docs/5.3/authorization)
 ![generator](https://cloud.githubusercontent.com/assets/1708683/19971653/dc239810-a209-11e6-8348-83ff1eb4add6.png)
 
 
-##Author
+## Author
 
 [Sohel Amin](http://www.sohelamin.com)
