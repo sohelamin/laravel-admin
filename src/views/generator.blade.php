@@ -78,13 +78,13 @@
                                         <option value="double">double</option>
                                         <option value="float">float</option>
                                     </select>
-                                    <div class="form-control">
-                                        <label>Required</label>
-                                        <select name="fields_required[]" class="form-control">
-                                            <option value="0">No</option>
-                                            <option value="1">Yes</option>
-                                        </select>
-                                    </div>
+
+                                    <label>Required</label>
+                                    <select name="fields_required[]" class="form-control">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+
                                     <button class="btn btn-success btn-add inline" type="button">
                                         <span class="glyphicon glyphicon-plus"></span>
                                     </button>

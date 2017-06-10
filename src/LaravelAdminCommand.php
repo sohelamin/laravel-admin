@@ -41,9 +41,8 @@ class LaravelAdminCommand extends Command
     {
         try {
             $this->call('migrate');
-            \App\User::first();
-        } catch (\Illuminate\Database\QueryException $ex) {
-            $this->error("Config your database first");
+        } catch (\Illuminate\Database\QueryException $e) {
+            $this->error($e->getMessage());
             exit();
         }
 
