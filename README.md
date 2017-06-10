@@ -9,7 +9,7 @@ An admin panel for managing users, roles, permissions & crud.
 
 1. Run
     ```
-    composer require appzcoder/laravel-admin:dev-master
+    composer require appzcoder/laravel-admin
     ```
 
 2. Add service provider to **config/app.php** file.
@@ -95,17 +95,17 @@ Learn more about ACL from [here](https://laravel.com/docs/5.3/authorization)
 
 ## Screenshots
 
-![roles](https://cloud.githubusercontent.com/assets/1708683/19971502/70eff1f6-a209-11e6-8fa0-1ff381198f1a.png)
+![roles](https://user-images.githubusercontent.com/1708683/27001704-766cba0c-4df2-11e7-8f7b-1fd10237a2b7.png)
 
-![new role](https://cloud.githubusercontent.com/assets/1708683/19971566/98785114-a209-11e6-9a2d-d027c13eb2d6.png)
+![new role](https://user-images.githubusercontent.com/1708683/27001717-8630861c-4df2-11e7-9ba3-31971c03244f.png)
 
-![permissions](https://cloud.githubusercontent.com/assets/1708683/19971588/a90eafbe-a209-11e6-8631-f2489dc6c547.png)
+![permissions](https://user-images.githubusercontent.com/1708683/27001718-90dd3e0c-4df2-11e7-8b3b-4dfd5fcd5ba8.png)
 
-![give permission to a role](https://cloud.githubusercontent.com/assets/1708683/19971609/bb4fa1a6-a209-11e6-891b-5b10629ea1a9.png)
+![give permission to a role](https://user-images.githubusercontent.com/1708683/27001721-9e48b080-4df2-11e7-89d1-2686a3cc67f9.png)
 
-![users](https://cloud.githubusercontent.com/assets/1708683/19971636/cb71096c-a209-11e6-964f-a60d7f84b434.png)
+![users](https://user-images.githubusercontent.com/1708683/27001726-b46e4212-4df2-11e7-8656-0f5d610a8929.png)
 
-![generator](https://cloud.githubusercontent.com/assets/1708683/19971653/dc239810-a209-11e6-8348-83ff1eb4add6.png)
+![generator](https://user-images.githubusercontent.com/1708683/27001730-bee94b7e-4df2-11e7-8ca4-db9b26fed73f.png)
 
 
 ## Author

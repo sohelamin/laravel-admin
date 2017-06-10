@@ -76,7 +76,6 @@ class ProcessController extends Controller
         }
 
         try {
-            dd($commandArg);
             Artisan::call('crud:generate', $commandArg);
 
             $menus = json_decode(File::get(base_path('resources/laravel-admin/menus.json')));
