@@ -104,28 +104,30 @@
             </div>
         </div>
     </div>
+@endsection
 
+@section('scripts')
     <script type="text/javascript">
-    $( document ).ready(function() {
-        $(document).on('click', '.btn-add', function(e) {
-            e.preventDefault();
+        $( document ).ready(function() {
+            $(document).on('click', '.btn-add', function(e) {
+                e.preventDefault();
 
-            var tableFields = $('.table-fields'),
-                currentEntry = $(this).parents('.entry:first'),
-                newEntry = $(currentEntry.clone()).appendTo(tableFields);
+                var tableFields = $('.table-fields'),
+                    currentEntry = $(this).parents('.entry:first'),
+                    newEntry = $(currentEntry.clone()).appendTo(tableFields);
 
-            newEntry.find('input').val('');
-            tableFields.find('.entry:not(:last) .btn-add')
-                .removeClass('btn-add').addClass('btn-remove')
-                .removeClass('btn-success').addClass('btn-danger')
-                .html('<span class="glyphicon glyphicon-minus"></span>');
-        }).on('click', '.btn-remove', function(e) {
-            $(this).parents('.entry:first').remove();
+                newEntry.find('input').val('');
+                tableFields.find('.entry:not(:last) .btn-add')
+                    .removeClass('btn-add').addClass('btn-remove')
+                    .removeClass('btn-success').addClass('btn-danger')
+                    .html('<span class="glyphicon glyphicon-minus"></span>');
+            }).on('click', '.btn-remove', function(e) {
+                $(this).parents('.entry:first').remove();
 
-            e.preventDefault();
-            return false;
+                e.preventDefault();
+                return false;
+            });
+
         });
-
-    });
     </script>
 @endsection

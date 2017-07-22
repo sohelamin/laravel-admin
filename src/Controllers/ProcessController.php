@@ -19,9 +19,7 @@ class ProcessController extends Controller
      */
     public function getGenerator()
     {
-        View::addNamespace('LaravelAdmin', __DIR__ . '/../views');
-
-        return View::make('LaravelAdmin::generator');
+        return view('laravel-admin::generator');
     }
 
     /**
