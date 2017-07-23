@@ -55,4 +55,15 @@ trait HasRoles
     {
         return $this->hasRole($permission->roles);
     }
+    
+    public function can($ability, $arguments = [])
+    {
+      $permission = Permission::where('name', $ability)->first();
+      if(!$permission)
+      {
+        return false;
+      }
+
+      return $this->hasPermission($permission);
+    }
 }
