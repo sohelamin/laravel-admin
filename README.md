@@ -110,4 +110,4 @@ Learn more about ACL from [here](https://laravel.com/docs/5.3/authorization)
 
 ## Author
 
-[Sohel Amin](http://www.sohelamin.com)
+[Sohel Amin](http://www.sohelamin.com) :email: [Hire Me](mailto:sohelamincse@gmail.com)
