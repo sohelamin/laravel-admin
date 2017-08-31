@@ -29,13 +29,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Appzcoder\\LaravelAdmin\\LaravelAdminServiceProvider::class",
+                "Appzcoder\\LaravelAdmin\\LaravelAdminServiceProvider",
                 "Appzcoder\\CrudGenerator\\CrudGeneratorServiceProvider",
-                "Collective\\Html\\HtmlServiceProvider::class"
+                "Collective\\Html\\HtmlServiceProvider"
             ],
             "aliases": {
-                "Form": "Collective\\Html\\FormFacade::class",
-                "HTML": "Collective\\Html\\HtmlFacade::class"
+                "Form": "Collective\\Html\\FormFacade",
+                "HTML": "Collective\\Html\\HtmlFacade"
             }
         }
     }
