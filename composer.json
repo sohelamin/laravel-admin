@@ -25,5 +25,18 @@
         "psr-4": {
             "Appzcoder\\LaravelAdmin\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Appzcoder\\LaravelAdmin\\LaravelAdminServiceProvider::class",
+                "Appzcoder\\CrudGenerator\\CrudGeneratorServiceProvider",
+                "Collective\\Html\\HtmlServiceProvider::class"
+            ],
+            "aliases": {
+                "Form": "Collective\\Html\\FormFacade::class",
+                "HTML": "Collective\\Html\\HtmlFacade::class"
+            }
+        }
     }
 }

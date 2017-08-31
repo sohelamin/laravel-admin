@@ -7,6 +7,33 @@ An admin panel for managing users, roles, permissions & crud.
 
 ## Installation
 
+For Laravel >= 5.5 you need to follow these steps
+---
+
+1. Run
+    ```
+    composer require appzcoder/laravel-admin
+    ```
+
+2. Install the admin package.
+    ```
+    php artisan laravel-admin:install
+    ```
+
+3. Make sure your user model's has a ```HasRoles``` trait **app/User.php**.
+    ```php
+    class User extends Authenticatable
+    {
+        use Notifiable, HasRoles;
+
+        ...
+    ```
+
+4. You can generate CRUD easily through generator tool now.
+
+For Laravel < 5.5 you need to follow these steps
+---
+
 1. Run
     ```
     composer require appzcoder/laravel-admin
