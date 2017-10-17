@@ -47,6 +47,8 @@ trait HasRoles
                     return true;
                 }
             }
+
+            return false;
         }
 
         return !!$role->intersect($this->roles)->count();

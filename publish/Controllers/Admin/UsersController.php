@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
-use Session;
 
 class UsersController extends Controller
 {
@@ -62,9 +61,7 @@ class UsersController extends Controller
             $user->assignRole($role);
         }
 
-        Session::flash('flash_message', 'User added!');
-
-        return redirect('admin/users');
+        return redirect('admin/users')->with('flash_message', 'User added!');
     }
 
     /**
@@ -105,12 +102,12 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int      $id
      * @param  \Illuminate\Http\Request  $request
+     * @param  int      $id
      *
      * @return void
      */
-    public function update($id, Request $request)
+    public function update(Request $request, $id)
     {
         $this->validate($request, ['name' => 'required', 'email' => 'required', 'roles' => 'required']);
 
@@ -127,9 +124,7 @@ class UsersController extends Controller
             $user->assignRole($role);
         }
 
-        Session::flash('flash_message', 'User updated!');
-
-        return redirect('admin/users');
+        return redirect('admin/users')->with('flash_message', 'User updated!');
     }
 
     /**
@@ -143,8 +138,6 @@ class UsersController extends Controller
     {
         User::destroy($id);
 
-        Session::flash('flash_message', 'User deleted!');
-
-        return redirect('admin/users');
+        return redirect('admin/users')->with('flash_message', 'User deleted!');
     }
 }

@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Role;
+use App\Permission;
 use Illuminate\Http\Request;
-use Session;
 
 class RolesController extends Controller
 {
@@ -36,7 +36,9 @@ class RolesController extends Controller
      */
     public function create()
     {
-        return view('admin.roles.create');
+        $permissions = Permission::select('id', 'name', 'label')->get()->pluck('label', 'name');
+
+        return view('admin.roles.create', compact('permissions'));
     }
 
     /**
@@ -50,11 +52,16 @@ class RolesController extends Controller
     {
         $this->validate($request, ['name' => 'required']);
 
-        Role::create($request->all());
+        $role = Role::create($request->all());
 
-        Session::flash('flash_message', 'Role added!');
+        $role->permissions()->detach();
 
-        return redirect('admin/roles');
+        foreach ($request->permissions as $permission_name) {
+            $permission = Permission::whereName($permission_name)->first();
+            $role->givePermissionTo($permission);
+        }
+
+        return redirect('admin/roles')->with('flash_message', 'Role added!');
     }
 
     /**
@@ -81,28 +88,34 @@ class RolesController extends Controller
     public function edit($id)
     {
         $role = Role::findOrFail($id);
+        $permissions = Permission::select('id', 'name', 'label')->get()->pluck('label', 'name');
 
-        return view('admin.roles.edit', compact('role'));
+        return view('admin.roles.edit', compact('role', 'permissions'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int      $id
      * @param  \Illuminate\Http\Request  $request
+     * @param  int      $id
      *
      * @return void
      */
-    public function update($id, Request $request)
+    public function update(Request $request, $id)
     {
         $this->validate($request, ['name' => 'required']);
 
         $role = Role::findOrFail($id);
         $role->update($request->all());
 
-        Session::flash('flash_message', 'Role updated!');
+        $role->permissions()->detach();
 
-        return redirect('admin/roles');
+        foreach ($request->permissions as $permission_name) {
+            $permission = Permission::whereName($permission_name)->first();
+            $role->givePermissionTo($permission);
+        }
+
+        return redirect('admin/roles')->with('flash_message', 'Role updated!');
     }
 
     /**
@@ -116,8 +129,6 @@ class RolesController extends Controller
     {
         Role::destroy($id);
 
-        Session::flash('flash_message', 'Role deleted!');
-
-        return redirect('admin/roles');
+        return redirect('admin/roles')->with('flash_message', 'Role deleted!');
     }
 }

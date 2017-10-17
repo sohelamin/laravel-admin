@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Permission;
 use Illuminate\Http\Request;
-use Session;
 
 class PermissionsController extends Controller
 {
@@ -52,9 +51,7 @@ class PermissionsController extends Controller
 
         Permission::create($request->all());
 
-        Session::flash('flash_message', 'Permission added!');
-
-        return redirect('admin/permissions');
+        return redirect('admin/permissions')->('flash_message', 'Permission added!');
     }
 
     /**
@@ -88,21 +85,19 @@ class PermissionsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
      * @param  \Illuminate\Http\Request $request
+     * @param  int  $id
      *
      * @return void
      */
-    public function update($id, Request $request)
+    public function update(Request $request, $id)
     {
         $this->validate($request, ['name' => 'required']);
 
         $permission = Permission::findOrFail($id);
         $permission->update($request->all());
 
-        Session::flash('flash_message', 'Permission updated!');
-
-        return redirect('admin/permissions');
+        return redirect('admin/permissions')->('flash_message', 'Permission updated!');
     }
 
     /**
@@ -116,8 +111,6 @@ class PermissionsController extends Controller
     {
         Permission::destroy($id);
 
-        Session::flash('flash_message', 'Permission deleted!');
-
-        return redirect('admin/permissions');
+        return redirect('admin/permissions')->('flash_message', 'Permission deleted!');
     }
 }

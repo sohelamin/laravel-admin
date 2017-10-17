@@ -7,7 +7,6 @@ use Artisan;
 use File;
 use Illuminate\Http\Request;
 use Response;
-use Session;
 use View;
 
 class ProcessController extends Controller
@@ -99,8 +98,6 @@ class ProcessController extends Controller
             return Response::make($e->getMessage(), 500);
         }
 
-        Session::flash('flash_message', 'Your CRUD has been generated. See on the menu.');
-
-        return redirect('admin/generator');
+        return redirect('admin/generator')->with('flash_message', 'Your CRUD has been generated. See on the menu.');
     }
 }
