@@ -56,9 +56,11 @@ class RolesController extends Controller
 
         $role->permissions()->detach();
 
-        foreach ($request->permissions as $permission_name) {
-            $permission = Permission::whereName($permission_name)->first();
-            $role->givePermissionTo($permission);
+        if(isset($request->permissions)) {
+            foreach ($request->permissions as $permission_name) {
+                $permission = Permission::whereName($permission_name)->first();
+                $role->givePermissionTo($permission);
+            }
         }
 
         return redirect('admin/roles')->with('flash_message', 'Role added!');
@@ -110,9 +112,11 @@ class RolesController extends Controller
 
         $role->permissions()->detach();
 
-        foreach ($request->permissions as $permission_name) {
-            $permission = Permission::whereName($permission_name)->first();
-            $role->givePermissionTo($permission);
+        if(isset($request->permissions)) {
+            foreach ( $request->permissions as $permission_name ) {
+                $permission = Permission::whereName($permission_name)->first();
+                $role->givePermissionTo($permission);
+            }
         }
 
         return redirect('admin/roles')->with('flash_message', 'Role updated!');
