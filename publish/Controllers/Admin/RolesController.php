@@ -53,10 +53,9 @@ class RolesController extends Controller
         $this->validate($request, ['name' => 'required']);
 
         $role = Role::create($request->all());
-
         $role->permissions()->detach();
 
-        if(isset($request->permissions)) {
+        if ($request->has('permissions')) {
             foreach ($request->permissions as $permission_name) {
                 $permission = Permission::whereName($permission_name)->first();
                 $role->givePermissionTo($permission);
@@ -99,7 +98,7 @@ class RolesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int      $id
+     * @param  int  $id
      *
      * @return void
      */
@@ -109,11 +108,10 @@ class RolesController extends Controller
 
         $role = Role::findOrFail($id);
         $role->update($request->all());
-
         $role->permissions()->detach();
 
-        if(isset($request->permissions)) {
-            foreach ( $request->permissions as $permission_name ) {
+        if ($request->has('permissions')) {
+            foreach ($request->permissions as $permission_name) {
                 $permission = Permission::whereName($permission_name)->first();
                 $role->givePermissionTo($permission);
             }
