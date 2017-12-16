@@ -72,6 +72,10 @@ class ProcessController extends Controller
             $commandArg['--route-group'] = $request->route_group;
         }
 
+        if ($request->has('form_helper')) {
+            $commandArg['--form-helper'] = $request->form_helper;
+        }
+
         try {
             Artisan::call('crud:generate', $commandArg);
 

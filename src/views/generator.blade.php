@@ -46,6 +46,12 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="route" class="col-md-4 control-label">Form Helper</label>
+                                <div class="col-md-6">
+                                    <input type="text" name="form_helper" class="form-control" id="form_helper" placeholder="laravelcollective">
+                                </div>
+                            </div>
                             <hr>
                             <div class="form-group table-fields">
                                 <h4 class="text-center">Table Fields:</h4><br>
