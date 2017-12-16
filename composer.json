@@ -18,7 +18,7 @@
     "require": {
         "php": ">=5.5.9",
         "illuminate/support": "^5.1",
-        "appzcoder/crud-generator": "^2.0",
+        "appzcoder/crud-generator": "^3.0",
         "laravelcollective/html": "~5.1"
     },
     "autoload": {
@@ -29,14 +29,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Appzcoder\\LaravelAdmin\\LaravelAdminServiceProvider",
-                "Appzcoder\\CrudGenerator\\CrudGeneratorServiceProvider",
-                "Collective\\Html\\HtmlServiceProvider"
-            ],
-            "aliases": {
-                "Form": "Collective\\Html\\FormFacade",
-                "HTML": "Collective\\Html\\HtmlFacade"
-            }
+                "Appzcoder\\LaravelAdmin\\LaravelAdminServiceProvider"
+            ]
         }
     }
 }
