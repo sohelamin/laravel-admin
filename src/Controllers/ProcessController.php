@@ -72,8 +72,16 @@ class ProcessController extends Controller
             $commandArg['--route-group'] = $request->route_group;
         }
 
+        if ($request->has('relationships')) {
+            $commandArg['--relationships'] = $request->relationships;
+        }
+
         if ($request->has('form_helper')) {
             $commandArg['--form-helper'] = $request->form_helper;
+        }
+
+        if ($request->has('soft_deletes')) {
+            $commandArg['--soft-deletes'] = $request->soft_deletes;
         }
 
         try {

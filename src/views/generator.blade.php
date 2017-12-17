@@ -47,9 +47,25 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="route" class="col-md-4 control-label">Form Helper</label>
+                                <label for="relationships" class="col-md-4 control-label">Relationships</label>
                                 <div class="col-md-6">
-                                    <input type="text" name="form_helper" class="form-control" id="form_helper" placeholder="laravelcollective">
+                                    <input type="text" name="relationships" class="form-control" id="relationships" placeholder="comments#hasMany#App\Comment">
+                                    <p class="help-block">method#relationType#Model</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form_helper" class="col-md-4 control-label">Form Helper</label>
+                                <div class="col-md-6">
+                                    <input type="text" name="form_helper" class="form-control" id="form_helper" placeholder="laravelcollective" value="laravelcollective">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="soft_deletes" class="col-md-4 control-label">Want to use soft deletes?</label>
+                                <div class="col-md-6">
+                                    <select name="soft_deletes" class="form-control" id="soft_deletes">
+                                        <option value="no">No</option>
+                                        <option value="yes">Yes</option>
+                                    </select>
                                 </div>
                             </div>
                             <hr>
