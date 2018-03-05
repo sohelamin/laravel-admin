@@ -6,39 +6,39 @@
             @include('admin.sidebar')
 
             <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Generator</div>
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-header">Generator</div>
+                    <div class="card-body">
 
                         <form class="form-horizontal" method="post" action="{{ url('/admin/generator') }}">
                             {{ csrf_field() }}
 
-                            <div class="form-group">
-                                <label for="crud_name" class="col-md-4 control-label">Crud Name:</label>
+                            <div class="form-group row">
+                                <label for="crud_name" class="col-md-4 col-form-label text-right">Crud Name:</label>
                                 <div class="col-md-6">
                                     <input type="text" name="crud_name" class="form-control" id="crud_name" placeholder="Posts" required="true">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="controller_namespace" class="col-md-4 control-label">Controller Namespace:</label>
+                            <div class="form-group row">
+                                <label for="controller_namespace" class="col-md-4 col-form-label text-right">Controller Namespace:</label>
                                 <div class="col-md-6">
                                     <input type="text" name="controller_namespace" class="form-control" id="controller_namespace" placeholder="Admin">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="route_group" class="col-md-4 control-label">Route Group Prefix:</label>
+                            <div class="form-group row">
+                                <label for="route_group" class="col-md-4 col-form-label text-right">Route Group Prefix:</label>
                                 <div class="col-md-6">
                                     <input type="text" name="route_group" class="form-control" id="route_group" placeholder="admin">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="view_path" class="col-md-4 control-label">View Path:</label>
+                            <div class="form-group row">
+                                <label for="view_path" class="col-md-4 col-form-label text-right">View Path:</label>
                                 <div class="col-md-6">
                                     <input type="text" name="view_path" class="form-control" id="view_path" placeholder="admin">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="route" class="col-md-4 control-label">Want to add route?</label>
+                            <div class="form-group row">
+                                <label for="route" class="col-md-4 col-form-label text-right">Want to add route?</label>
                                 <div class="col-md-6">
                                     <select name="route" class="form-control" id="route">
                                         <option value="yes">Yes</option>
@@ -46,21 +46,21 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="relationships" class="col-md-4 control-label">Relationships</label>
+                            <div class="form-group row">
+                                <label for="relationships" class="col-md-4 col-form-label text-right">Relationships</label>
                                 <div class="col-md-6">
                                     <input type="text" name="relationships" class="form-control" id="relationships" placeholder="comments#hasMany#App\Comment">
                                     <p class="help-block">method#relationType#Model</p>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="form_helper" class="col-md-4 control-label">Form Helper</label>
+                            <div class="form-group row">
+                                <label for="form_helper" class="col-md-4 col-form-label text-right">Form Helper</label>
                                 <div class="col-md-6">
                                     <input type="text" name="form_helper" class="form-control" id="form_helper" placeholder="laravelcollective" value="laravelcollective">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="soft_deletes" class="col-md-4 control-label">Want to use soft deletes?</label>
+                            <div class="form-group row">
+                                <label for="soft_deletes" class="col-md-4 col-form-label text-right">Want to use soft deletes?</label>
                                 <div class="col-md-6">
                                     <select name="soft_deletes" class="form-control" id="soft_deletes">
                                         <option value="no">No</option>
@@ -71,7 +71,7 @@
                             <hr>
                             <div class="form-group table-fields">
                                 <h4 class="text-center">Table Fields:</h4><br>
-                                <div class="entry col-md-10 col-md-offset-2 form-inline">
+                                <div class="entry col-md-10 offset-md-2 form-inline">
                                     <input class="form-control" name="fields[]" type="text" placeholder="field_name" required="true">
                                     <select name="fields_type[]" class="form-control">
                                         <option value="string">string</option>
@@ -107,15 +107,15 @@
                                         <option value="1">Yes</option>
                                     </select>
 
-                                    <button class="btn btn-success btn-add inline" type="button">
-                                        <span class="glyphicon glyphicon-plus"></span>
+                                    <button class="btn btn-success btn-add inline btn-sm" type="button">
+                                        <span class="fa fa-plus"></span>
                                     </button>
                                 </div>
                             </div>
                             <p class="help text-center">It will automatically assume form fields based on the migration field type.</p>
                             <br>
-                            <div class="form-group">
-                                <div class="col-md-offset-4 col-md-4">
+                            <div class="form-group row">
+                                <div class="offset-md-4 col-md-4">
                                     <button type="submit" class="btn btn-primary" name="generate">Generate</button>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                 tableFields.find('.entry:not(:last) .btn-add')
                     .removeClass('btn-add').addClass('btn-remove')
                     .removeClass('btn-success').addClass('btn-danger')
-                    .html('<span class="glyphicon glyphicon-minus"></span>');
+                    .html('<span class="fa fa-minus"></span>');
             }).on('click', '.btn-remove', function(e) {
                 $(this).parents('.entry:first').remove();
 

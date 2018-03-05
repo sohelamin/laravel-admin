@@ -6,10 +6,10 @@
             @include('admin.sidebar')
 
             <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Edit Permission</div>
-                    <div class="panel-body">
-                        <a href="{{ url('/admin/permissions') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                <div class="card">
+                    <div class="card-header">Edit Permission</div>
+                    <div class="card-body">
+                        <a href="{{ url('/admin/permissions') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
 

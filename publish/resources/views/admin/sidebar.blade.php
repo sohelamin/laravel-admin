@@ -1,17 +1,16 @@
 <div class="col-md-3">
-
     @foreach($laravelAdminMenus->menus as $section)
         @if($section->items)
-            <div class="panel panel-default panel-flush">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     {{ $section->section }}
                 </div>
 
-                <div class="panel-body">
-                    <ul class="nav" role="tablist">
+                <div class="card-body">
+                    <ul class="nav flex-column" role="tablist">
                         @foreach($section->items as $menu)
-                            <li role="presentation">
-                                <a href="{{ url($menu->url) }}">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" href="{{ url($menu->url) }}">
                                     {{ $menu->title }}
                                 </a>
                             </li>
@@ -19,6 +18,7 @@
                     </ul>
                 </div>
             </div>
+            <br/>
         @endif
     @endforeach
 </div>

@@ -6,18 +6,18 @@
             @include('admin.sidebar')
 
             <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">%%crudNameCap%%</div>
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-header">%%crudNameCap%%</div>
+                    <div class="card-body">
                         <a href="{{ url('/%%routeGroup%%%%viewName%%/create') }}" class="btn btn-success btn-sm" title="Add New %%modelName%%">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
-                        <form method="GET" action="{{ url('/%%routeGroup%%%%viewName%%') }}" accept-charset="UTF-8" class="navbar-form navbar-right" role="search">
+                        <form method="GET" action="{{ url('/%%routeGroup%%%%viewName%%') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
+                                <span class="input-group-append">
+                                    <button class="btn btn-secondary" type="submit">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </span>
@@ -27,7 +27,7 @@
                         <br/>
                         <br/>
                         <div class="table-responsive">
-                            <table class="table table-borderless">
+                            <table class="table">
                                 <thead>
                                     <tr>
                                         <th>#</th>%%formHeadingHtml%%<th>Actions</th>
