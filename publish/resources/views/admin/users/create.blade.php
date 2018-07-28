@@ -23,7 +23,7 @@
 
                         {!! Form::open(['url' => '/admin/users', 'class' => 'form-horizontal']) !!}
 
-                        @include ('admin.users.form')
+                        @include ('admin.users.form', ['formMode' => 'create'])
 
                         {!! Form::close() !!}
 

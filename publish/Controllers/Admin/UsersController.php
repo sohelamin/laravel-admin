@@ -51,7 +51,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['name' => 'required', 'email' => 'required', 'password' => 'required', 'roles' => 'required']);
+        $this->validate(
+            $request,
+            [
+                'name' => 'required',
+                'email' => 'required|string|max:255|email|unique:users',
+                'password' => 'required',
+                'roles' => 'required'
+            ]
+        );
 
         $data = $request->except('password');
         $data['password'] = bcrypt($request->password);
@@ -109,7 +117,14 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, ['name' => 'required', 'email' => 'required', 'roles' => 'required']);
+        $this->validate(
+            $request,
+            [
+                'name' => 'required',
+                'email' => 'required|string|max:255|email|unique:users,email,' . $id,
+                'roles' => 'required'
+            ]
+        );
 
         $data = $request->except('password');
         if ($request->has('password')) {

@@ -27,7 +27,7 @@
                             'class' => 'form-horizontal'
                         ]) !!}
 
-                        @include ('admin.permissions.form', ['submitButtonText' => 'Update'])
+                        @include ('admin.permissions.form', ['formMode' => 'edit'])
 
                         {!! Form::close() !!}
 

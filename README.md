@@ -98,7 +98,7 @@ For Laravel < 5.5 you need to follow these steps
 
     ```php
     // Check role anywhere
-    if(Auth::check() && Auth::user()->hasRole('admin')) {
+    if (Auth::check() && Auth::user()->hasRole('admin')) {
         // Do admin stuff here
     } else {
         // Do nothing
@@ -113,7 +113,7 @@ For Laravel < 5.5 you need to follow these steps
 6. For checking permissions see below:
 
     ```php
-    if($user->can('permission-name')) {
+    if ($user->can('permission-name')) {
         // Do something
     }
     ```
@@ -137,4 +137,4 @@ Learn more about ACL from [here](https://laravel.com/docs/5.3/authorization)
 
 ## Author
 
-[Sohel Amin](http://www.sohelamin.com) :email: [Hire Me](mailto:sohelamincse@gmail.com)
+[Sohel Amin](http://www.sohelamin.com) :email: [Email Me](mailto:sohelamincse@gmail.com)
