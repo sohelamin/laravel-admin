@@ -24,6 +24,8 @@ class ProcessController extends Controller
     /**
      * Process generator.
      *
+     * @param \Illuminate\Http\Request $request
+     *
      * @return Response
      */
     public function postGenerator(Request $request)
@@ -93,7 +95,7 @@ class ProcessController extends Controller
             $routeName = ($commandArg['--route-group']) ? $commandArg['--route-group'] . '/' . snake_case($name, '-') : snake_case($name, '-');
 
             $menus->menus = array_map(function ($menu) use ($name, $routeName) {
-                if ($menu->section == 'Modules') {
+                if ($menu->section == 'Resources') {
                     array_push($menu->items, (object) [
                         'title' => $name,
                         'url' => '/' . $routeName,
