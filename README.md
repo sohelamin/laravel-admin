@@ -2,13 +2,15 @@
 An admin panel for managing users, roles, permissions & crud.
 
 ### Requirements
-    Laravel >=5.1
-    PHP >= 5.5.9
+    Laravel >=5.5
+    PHP >= 7
+
+## Features
+- Role & Permission
+- CRUD Generator
+- Activity Log
 
 ## Installation
-
-For Laravel >= 5.5 you need to follow these steps
----
 
 1. Run
     ```
@@ -19,7 +21,7 @@ For Laravel >= 5.5 you need to follow these steps
     ```
     php artisan laravel-admin:install
     ```
-
+    > Service provide will be discovered automatically.
 3. Make sure your user model's has a ```HasRoles``` trait **app/User.php**.
     ```php
     class User extends Authenticatable
@@ -31,51 +33,6 @@ For Laravel >= 5.5 you need to follow these steps
 
 4. You can generate CRUD easily through generator tool now.
 
-For Laravel < 5.5 you need to follow these steps
----
-
-1. Run
-    ```
-    composer require appzcoder/laravel-admin
-    ```
-
-2. Add service provider to **config/app.php** file.
-    ```php
-    'providers' => [
-        ...
-
-        Appzcoder\LaravelAdmin\LaravelAdminServiceProvider::class,
-        // For crud generator & html
-        Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-    ],
-    ```
-3. Add **Collective/Html** aliases to **config/app.php** file.
-    ```php
-    'aliases' => [
-        ...
-
-        'Form' => Collective\Html\FormFacade::class,
-        'HTML' => Collective\Html\HtmlFacade::class,
-    ],
-    ```
-4. Run ```composer dump-autoload```
-
-5. Install the admin package.
-    ```
-    php artisan laravel-admin:install
-    ```
-
-6. Make sure your user model's has a ```HasRoles``` trait **app/User.php**.
-    ```php
-    class User extends Authenticatable
-    {
-        use Notifiable, HasRoles;
-
-        ...
-    ```
-
-7. You can generate CRUD easily through generator tool now.
 
 ## Usage
 

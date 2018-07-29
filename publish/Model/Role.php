@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Role extends Model
 {
+    use LogsActivity;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -33,5 +36,17 @@ class Role extends Model
     public function givePermissionTo(Permission $permission)
     {
         return $this->permissions()->save($permission);
+    }
+
+    /**
+     * Change activity log event description
+     *
+     * @param string $eventName
+     *
+     * @return string
+     */
+    public function getDescriptionForEvent($eventName)
+    {
+        return __CLASS__ . " model has been {$eventName}";
     }
 }
