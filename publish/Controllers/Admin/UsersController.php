@@ -21,9 +21,9 @@ class UsersController extends Controller
 
         if (!empty($keyword)) {
             $users = User::where('name', 'LIKE', "%$keyword%")->orWhere('email', 'LIKE', "%$keyword%")
-                ->paginate($perPage);
+                ->latest()->paginate($perPage);
         } else {
-            $users = User::paginate($perPage);
+            $users = User::latest()->paginate($perPage);
         }
 
         return view('admin.users.index', compact('users'));

@@ -32,7 +32,15 @@
                                     <tr>
                                         <th>ID</th><td>{{ $activitylog->id }}</td>
                                     </tr>
-                                    <tr><th> Description </th><td> {{ $activitylog->description }} </td></tr><tr><th> Date </th><td> {{ $activitylog->created_at }} </td></tr>
+                                    <tr>
+                                        <th> Activity </th><td> {{ $activitylog->description }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Actor </th><td> {{ optional($activitylog->causer)->name }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Date </th><td> {{ $activitylog->created_at }} </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

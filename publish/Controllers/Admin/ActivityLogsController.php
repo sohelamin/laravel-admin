@@ -22,9 +22,9 @@ class ActivityLogsController extends Controller
 
         if (!empty($keyword)) {
             $activitylogs = Activity::where('description', 'LIKE', "%$keyword%")
-                ->paginate($perPage);
+                ->latest()->paginate($perPage);
         } else {
-            $activitylogs = Activity::paginate($perPage);
+            $activitylogs = Activity::latest()->paginate($perPage);
         }
 
         return view('admin.activitylogs.index', compact('activitylogs'));

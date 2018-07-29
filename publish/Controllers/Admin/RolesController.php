@@ -21,9 +21,9 @@ class RolesController extends Controller
 
         if (!empty($keyword)) {
             $roles = Role::where('name', 'LIKE', "%$keyword%")->orWhere('label', 'LIKE', "%$keyword%")
-                ->paginate($perPage);
+                ->latest()->paginate($perPage);
         } else {
-            $roles = Role::paginate($perPage);
+            $roles = Role::latest()->paginate($perPage);
         }
 
         return view('admin.roles.index', compact('roles'));

@@ -26,14 +26,14 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Activity</th><th>Actor</th><th>Date</th><th>Actions</th>
+                                        <th>ID</th><th>Activity</th><th>Actor</th><th>Date</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($activitylogs as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->description }}</td><td>{{ $item->description }}</td><td>{{ $item->created_at }}</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->description }}</td><td>{{ optional($item->causer)->name }}</td><td>{{ $item->created_at }}</td>
                                         <td>
                                             <a href="{{ url('/admin/activitylogs/' . $item->id) }}" title="View Activity"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             {!! Form::open([
