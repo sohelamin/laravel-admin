@@ -36,11 +36,11 @@ An admin panel for managing users, roles, permissions & crud.
 
 ## Usage
 
-1. Create some roles.
+1. Create some permissions.
 
-2. Create some permissions.
+2. Create some roles.
 
-3. Give permission(s) to a role.
+3. Assign permission(s) to role.
 
 4. Create user(s) with role.
 
@@ -75,7 +75,7 @@ An admin panel for managing users, roles, permissions & crud.
     }
     ```
 
-Learn more about ACL from [here](https://laravel.com/docs/5.3/authorization)
+Learn more about ACL from [here](https://laravel.com/docs/master/authorization)
 
 For activity log please read `spatie/laravel-activitylog` [docs](https://docs.spatie.be/laravel-activitylog/v2/introduction)
 
@@ -91,3 +91,7 @@ For activity log please read `spatie/laravel-activitylog` [docs](https://docs.sp
 ## Author
 
 [Sohel Amin](http://www.sohelamin.com) :email: [Email Me](mailto:sohelamincse@gmail.com)
+
+## License
+
+This project is licensed under the MIT License - see the [License File](LICENSE) for details
