@@ -81,17 +81,11 @@ For activity log please read `spatie/laravel-activitylog` [docs](https://docs.sp
 
 ## Screenshots
 
-![roles](https://user-images.githubusercontent.com/1708683/27001704-766cba0c-4df2-11e7-8f7b-1fd10237a2b7.png)
+![users](https://user-images.githubusercontent.com/1708683/43477093-1ac08d42-951c-11e8-8217-00aedc19b28d.png)
 
-![new role](https://user-images.githubusercontent.com/1708683/27001717-8630861c-4df2-11e7-9ba3-31971c03244f.png)
+![activity log](https://user-images.githubusercontent.com/1708683/43477154-426d849e-951c-11e8-8682-ac1950114a5a.png)
 
-![permissions](https://user-images.githubusercontent.com/1708683/27001718-90dd3e0c-4df2-11e7-8b3b-4dfd5fcd5ba8.png)
-
-![give permission to a role](https://user-images.githubusercontent.com/1708683/27001721-9e48b080-4df2-11e7-89d1-2686a3cc67f9.png)
-
-![users](https://user-images.githubusercontent.com/1708683/27001726-b46e4212-4df2-11e7-8656-0f5d610a8929.png)
-
-![generator](https://user-images.githubusercontent.com/1708683/27001730-bee94b7e-4df2-11e7-8ca4-db9b26fed73f.png)
+![generator](https://user-images.githubusercontent.com/1708683/43477174-5381d15e-951c-11e8-9f86-2e45acd38f08.png)
 
 
 ## Author
