@@ -19,7 +19,8 @@
         "php": ">=5.5.9",
         "illuminate/support": "^5.1",
         "appzcoder/crud-generator": "^3.0",
-        "laravelcollective/html": "~5.1"
+        "laravelcollective/html": "~5.1",
+        "spatie/laravel-activitylog": "^2.8"
     },
     "autoload": {
         "psr-4": {

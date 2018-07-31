@@ -36,7 +36,14 @@
                                         <th> Activity </th><td> {{ $activitylog->description }} </td>
                                     </tr>
                                     <tr>
-                                        <th> Actor </th><td> {{ optional($activitylog->causer)->name }} </td>
+                                        <th> Actor </th>
+                                        <td>
+                                            @if ($activitylog->causer)
+                                                <a href="{{ url('/admin/users/' . $activitylog->causer->id) }}">{{ $activitylog->causer->name }}</a>
+                                            @else
+                                                -
+                                            @endif
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th> Date </th><td> {{ $activitylog->created_at }} </td>

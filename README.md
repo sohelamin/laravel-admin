@@ -3,7 +3,7 @@ An admin panel for managing users, roles, permissions & crud.
 
 ### Requirements
     Laravel >=5.5
-    PHP >= 7
+    PHP >= 7.0
 
 ## Features
 - Role & Permission
@@ -21,7 +21,7 @@ An admin panel for managing users, roles, permissions & crud.
     ```
     php artisan laravel-admin:install
     ```
-    > Service provide will be discovered automatically.
+    > Service provider will be discovered automatically.
 3. Make sure your user model's has a ```HasRoles``` trait **app/User.php**.
     ```php
     class User extends Authenticatable
@@ -76,6 +76,8 @@ An admin panel for managing users, roles, permissions & crud.
     ```
 
 Learn more about ACL from [here](https://laravel.com/docs/5.3/authorization)
+
+For activity log please read `spatie/laravel-activitylog` [docs](https://docs.spatie.be/laravel-activitylog/v2/introduction)
 
 ## Screenshots
 
