@@ -1,7 +1,7 @@
 %%formFieldsHtml%%
 
-<div class="form-group">
-    <div class="col-md-offset-4 col-md-4">
+<div class="form-group row">
+    <div class="col-md-offset-2 col-md-10">
         <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
     </div>
 </div>

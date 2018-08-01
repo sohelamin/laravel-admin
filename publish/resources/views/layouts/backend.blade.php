@@ -85,7 +85,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.8.1/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: '.crud-richtext'
+        });
+    </script>
     <script type="text/javascript">
         $(function () {
             // Navigation active
