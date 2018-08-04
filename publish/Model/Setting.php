@@ -3,12 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Activitylog\Traits\LogsActivity;
 
 class Setting extends Model
 {
-    use LogsActivity;
-    
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * The database table used by the model.
@@ -18,10 +21,10 @@ class Setting extends Model
     protected $table = 'settings';
 
     /**
-    * The database primary key value.
-    *
-    * @var string
-    */
+     * The database primary key value.
+     *
+     * @var string
+     */
     protected $primaryKey = 'id';
 
     /**
@@ -30,18 +33,4 @@ class Setting extends Model
      * @var array
      */
     protected $fillable = ['key', 'value'];
-
-    
-
-    /**
-     * Change activity log event description
-     *
-     * @param string $eventName
-     *
-     * @return string
-     */
-    public function getDescriptionForEvent($eventName)
-    {
-        return __CLASS__ . " model has been {$eventName}";
-    }
 }

@@ -4,7 +4,6 @@ namespace Appzcoder\LaravelAdmin;
 
 use File;
 use Illuminate\Support\ServiceProvider;
-use Setting;
 
 class LaravelAdminServiceProvider extends ServiceProvider
 {
@@ -70,6 +69,6 @@ class LaravelAdminServiceProvider extends ServiceProvider
             'Appzcoder\LaravelAdmin\LaravelAdminCommand'
         );
 
-        $this->app->bind('Setting', Setting::class);
+        $this->app->bind('Setting', \Appzcoder\LaravelAdmin\Setting::class);
     }
 }
