@@ -27,7 +27,7 @@
             "Appzcoder\\LaravelAdmin\\": "src/"
         },
         "files": [
-            "helpers.php"
+            "src/helpers.php"
         ]
     },
     "extra": {
