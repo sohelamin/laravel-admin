@@ -25,7 +25,10 @@
     "autoload": {
         "psr-4": {
             "Appzcoder\\LaravelAdmin\\": "src/"
-        }
+        },
+        "files": [
+            "helpers.php"
+        ]
     },
     "extra": {
         "laravel": {
