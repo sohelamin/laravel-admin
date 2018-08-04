@@ -6,9 +6,11 @@ An admin panel for managing users, roles, permissions & crud.
     PHP >= 7.0
 
 ## Features
-- Role & Permission
+- User, Role & Permission Manager
 - CRUD Generator
 - Activity Log
+- Page CRUD
+- Settings
 
 ## Installation
 
@@ -87,6 +89,7 @@ For activity log please read `spatie/laravel-activitylog` [docs](https://docs.sp
 
 ![generator](https://user-images.githubusercontent.com/1708683/43477174-5381d15e-951c-11e8-9f86-2e45acd38f08.png)
 
+![settings](https://user-images.githubusercontent.com/1708683/43679408-67b724d0-9846-11e8-8eb0-49e04c449ee3.png)
 
 ## Author
 
