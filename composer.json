@@ -20,7 +20,7 @@
         "illuminate/support": "^5.5",
         "appzcoder/crud-generator": "^3.0",
         "laravelcollective/html": "^5.5",
-        "spatie/laravel-activitylog": "^3.0"
+        "spatie/laravel-activitylog": "^3.2"
     },
     "autoload": {
         "psr-4": {
