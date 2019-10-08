@@ -18,12 +18,12 @@ An admin panel for managing users, roles, permissions & crud.
     ```
     composer require appzcoder/laravel-admin
     ```
-
+    > Service provider will be discovered automatically.
 2. Install the admin package.
     ```
     php artisan laravel-admin:install
     ```
-    > Service provider will be discovered automatically.
+
 3. Make sure your user model's has a ```HasRoles``` trait **app/User.php**.
     ```php
     class User extends Authenticatable
