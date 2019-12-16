@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-header">Settings</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/settings/create') }}" class="btn btn-success btn-sm" title="Add New Setting">
+                        <a href="{{ route('admin.settings.create') }}" class="btn btn-success btn-sm" title="Add New Setting">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
@@ -40,8 +40,8 @@
                                         <td>{{ $item->value }}</td>
                                         <td><code>setting('{{ $item->key }}')</code></td>
                                         <td>
-                                            <a href="{{ url('/admin/settings/' . $item->id) }}" title="View Setting"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                                            <a href="{{ url('/admin/settings/' . $item->id . '/edit') }}" title="Edit Setting"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                            <a href="{{ route('admin.settings.index', $item->id) }}" title="View Setting"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                            <a href="{{ route('admin.settings.edit', $item->id) }}" title="Edit Setting"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                             {!! Form::open([
                                                 'method' => 'DELETE',
                                                 'url' => ['/admin/settings', $item->id],

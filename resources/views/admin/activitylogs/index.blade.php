@@ -36,14 +36,14 @@
                                         <td>{{ $item->description }}</td>
                                         <td>
                                             @if ($item->causer)
-                                                <a href="{{ url('/admin/users/' . $item->causer->id) }}">{{ $item->causer->name }}</a>
+                                                <a href="{{ route('admin.users.show', $item->causer->id) }}">{{ $item->causer->name }}</a>
                                             @else
                                                 -
                                             @endif
                                         </td>
                                         <td>{{ $item->created_at }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/activitylogs/' . $item->id) }}" title="View Activity"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                            <a href="{{ route('admin.activitylogs.show', $item->id) }}" title="View Activity"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                                             {!! Form::open([
                                                 'method' => 'DELETE',
                                                 'url' => ['/admin/activitylogs', $item->id],

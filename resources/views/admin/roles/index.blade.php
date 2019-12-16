@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-header">Roles</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/roles/create') }}" class="btn btn-success btn-sm" title="Add New Role">
+                        <a href="{{ route('admin.roles.create') }}" class="btn btn-success btn-sm" title="Add New Role">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
@@ -38,10 +38,10 @@
                                 @foreach($roles as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td><a href="{{ url('/admin/roles', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->label }}</td>
+                                        <td><a href="{{ route('admin.roles.show', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->label }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/roles/' . $item->id) }}" title="View Role"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                                            <a href="{{ url('/admin/roles/' . $item->id . '/edit') }}" title="Edit Role"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                            <a href="{{ route('admin.roles.show', $item->id) }}" title="View Role"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                            <a href="{{ route('admin.roles.edit', $item->id) }}" title="Edit Role"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                             {!! Form::open([
                                                 'method' => 'DELETE',
                                                 'url' => ['/admin/roles', $item->id],

@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-header">Pages</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/pages/create') }}" class="btn btn-success btn-sm" title="Add New Page">
+                        <a href="{{ route('admin.pages.create') }}" class="btn btn-success btn-sm" title="Add New Page">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
@@ -39,8 +39,8 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->title }}</td><td>{{ $item->content }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/pages/' . $item->id) }}" title="View Page"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                                            <a href="{{ url('/admin/pages/' . $item->id . '/edit') }}" title="Edit Page"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                            <a href="{{ route('admin.pages.show', $item->id) }}" title="View Page"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                            <a href="{{ route('admin.pages.edit', $item->id) }}" title="Edit Page"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                             {!! Form::open([
                                                 'method' => 'DELETE',
                                                 'url' => ['/admin/pages', $item->id],

@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-header">Permissions</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/permissions/create') }}" class="btn btn-success btn-sm" title="Add New Permission">
+                        <a href="{{ route('admin.permissions.create') }}" class="btn btn-success btn-sm" title="Add New Permission">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
@@ -38,10 +38,10 @@
                                 @foreach($permissions as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td><a href="{{ url('/admin/permissions', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->label }}</td>
+                                        <td><a href="{{ route('admin.permissions.show', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->label }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/permissions/' . $item->id) }}" title="View Permission"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                                            <a href="{{ url('/admin/permissions/' . $item->id . '/edit') }}" title="Edit Permission"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                            <a href="{{ route('admin.permissions.show', $item->id) }}" title="View Permission"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                            <a href="{{ route('admin.permissions.edit', $item->id) }}" title="Edit Permission"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
                                             {!! Form::open([
                                                 'method' => 'DELETE',
                                                 'url' => ['/admin/permissions', $item->id],

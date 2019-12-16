@@ -10,7 +10,7 @@
                     <div class="card-header">Activity {{ $activitylog->id }}</div>
                     <div class="card-body">
 
-                        <a href="{{ url('/admin/activitylogs') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ route('admin.activityLogs') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         {!! Form::open([
                             'method'=>'DELETE',
                             'url' => ['admin/activitylogs', $activitylog->id],
@@ -39,7 +39,7 @@
                                         <th> Actor </th>
                                         <td>
                                             @if ($activitylog->causer)
-                                                <a href="{{ url('/admin/users/' . $activitylog->causer->id) }}">{{ $activitylog->causer->name }}</a>
+                                                <a href="{{ route('admin.users.show', $item->causer->id) }}">{{ $activitylog->causer->name }}</a>
                                             @else
                                                 -
                                             @endif
