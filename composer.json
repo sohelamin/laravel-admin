@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "illuminate/support": "^6.x",
+        "illuminate/support": "^6.0",
         "appzcoder/crud-generator": "^3.0",
         "laravelcollective/html": "^6.0",
         "spatie/laravel-activitylog": "^3.2"
