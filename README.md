@@ -1,6 +1,14 @@
 # Laravel Admin Panel
 An admin panel for managing users, roles, permissions & crud.
 
+# My Fork:
+
+My fork of this project was intended to clean it up a bit, allowing us to use Laravel's package discovery and Composer for a super easy install.
+I also intend to rip out the built-in permissions system and pull Spatie/Laravel-Permission into this project.
+It's quite likely that the original repo's information (below) is now out-of-date and some may not apply to this fork.
+
+ * Converted all `url()` helper function calls to `route()` with named routes - allowing us to modify the package's routes incase the URLs overlap pre-existing routes.
+
 ### Requirements
     Laravel >=6.0
     PHP >= 7.0

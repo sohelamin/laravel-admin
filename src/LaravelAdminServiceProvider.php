@@ -22,38 +22,40 @@ class LaravelAdminServiceProvider extends ServiceProvider
     public function boot(\Illuminate\Routing\Router $router)
     {
         $this->publishes([
-            __DIR__ . '/../publish/Middleware/' => app_path('Http/Middleware'),
+            __DIR__ . '/src/Middleware/' => app_path('Http/Middleware'),
         ]);
 
         $this->publishes([
-            __DIR__ . '/../publish/migrations/' => database_path('migrations'),
+            __DIR__ . '/src/migrations/' => database_path('migrations'),
         ]);
 
         $this->publishes([
-            __DIR__ . '/../publish/Model/' => app_path(),
+            __DIR__ . '/src/Model/' => app_path(),
         ]);
 
         $this->publishes([
-            __DIR__ . '/../publish/Controllers/' => app_path('Http/Controllers'),
+            __DIR__ . '/src/Controllers/' => app_path('Http/Controllers'),
         ]);
 
         $this->publishes([
-            __DIR__ . '/../publish/resources/' => base_path('resources'),
+            __DIR__ . '/src/resources/' => base_path('resources'),
         ]);
 
         $this->publishes([
-            __DIR__ . '/../publish/crudgenerator.php' => config_path('crudgenerator.php'),
+            __DIR__ . '/src/crudgenerator.php' => config_path('crudgenerator.php'),
         ]);
 
         $this->publishes([
             __DIR__ . '/views' => base_path('resources/views/vendor/laravel-admin'),
         ], 'views');
 
-        $this->loadViewsFrom(__DIR__ . '/views', 'laravel-admin');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'laravel-admin');
+
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         $menus = [];
-        if (File::exists(base_path('resources/laravel-admin/menus.json'))) {
-            $menus = json_decode(File::get(base_path('resources/laravel-admin/menus.json')));
+        if (File::exists(__DIR__.'/resources/laravel-admin/menus.json')) {
+            $menus = json_decode(File::get(__DIR__.'/resources/laravel-admin/menus.json'));
             view()->share('laravelAdminMenus', $menus);
         }
     }

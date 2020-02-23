@@ -62,30 +62,7 @@ class LaravelAdminCommand extends Command
         $this->info("Migrating the database tables into your application");
         $this->call('migrate');
 
-        $this->info("Adding the routes");
-
-        $routeFile = app_path('Http/routes.php');
-        if (\App::VERSION() >= '5.3') {
-            $routeFile = base_path('routes/web.php');
-        }
-
-        $routes =
-            <<<EOD
-Route::get('admin', 'Admin\\AdminController@index');
-Route::resource('admin/roles', 'Admin\\RolesController');
-Route::resource('admin/permissions', 'Admin\\PermissionsController');
-Route::resource('admin/users', 'Admin\\UsersController');
-Route::resource('admin/pages', 'Admin\\PagesController');
-Route::resource('admin/activitylogs', 'Admin\\ActivityLogsController')->only([
-    'index', 'show', 'destroy'
-]);
-Route::resource('admin/settings', 'Admin\\SettingsController');
-Route::get('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
-Route::post('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
-
-EOD;
-
-        File::append($routeFile, "\n" . $routes);
+ 
 
         $this->info("Overriding the AuthServiceProvider");
         $contents = File::get(__DIR__ . '/../publish/Providers/AuthServiceProvider.php');
