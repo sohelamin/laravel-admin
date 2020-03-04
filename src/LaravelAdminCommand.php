@@ -57,7 +57,7 @@ class LaravelAdminCommand extends Command
         $this->call('vendor:publish', ['--provider' => 'Spatie\Activitylog\ActivitylogServiceProvider', '--tag' => 'migrations']);
 
         $this->info("Dumping the composer autoload");
-        (new Process('composer dump-autoload'))->run();
+        (new Process(['composer dump-autoload']))->run();
 
         $this->info("Migrating the database tables into your application");
         $this->call('migrate');

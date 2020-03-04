@@ -2,7 +2,7 @@
 An admin panel for managing users, roles, permissions & crud.
 
 ### Requirements
-    Laravel >=6.0
+    Laravel >=5.5
     PHP >= 7.0
 
 ## Features
