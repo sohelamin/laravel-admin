@@ -48,10 +48,10 @@ An admin panel for managing users, roles, permissions & crud.
 
 5. For checking authenticated user's role see below:
     ```php
-    // Add roles middleware in app/Http/Kernel.php
+    // Add role middleware in app/Http/Kernel.php
     protected $routeMiddleware = [
         ...
-        'roles' => \App\Http\Middleware\CheckRole::class,
+        'role' => \App\Http\Middleware\CheckRole::class,
     ];
     ```
 
@@ -64,7 +64,12 @@ An admin panel for managing users, roles, permissions & crud.
     }
 
     // Check role in route middleware
-    Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'roles' => 'admin'], function () {
+    Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
+       Route::get('/', ['uses' => 'AdminController@index']);
+    });
+
+    // Check permission in route middleware
+    Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'can:write_user']], function () {
        Route::get('/', ['uses' => 'AdminController@index']);
     });
     ```

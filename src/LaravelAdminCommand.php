@@ -46,7 +46,7 @@ class LaravelAdminCommand extends Command
             exit();
         }
 
-        if (\App::VERSION() >= '5.2') {
+        if (\App::VERSION() >= '5.2' && \App::VERSION() < '6.0') {
             $this->info("Generating the authentication scaffolding");
             $this->call('make:auth');
         }
@@ -57,7 +57,7 @@ class LaravelAdminCommand extends Command
         $this->call('vendor:publish', ['--provider' => 'Spatie\Activitylog\ActivitylogServiceProvider', '--tag' => 'migrations']);
 
         $this->info("Dumping the composer autoload");
-        (new Process('composer dump-autoload'))->run();
+        (new Process(['composer dump-autoload']))->run();
 
         $this->info("Migrating the database tables into your application");
         $this->call('migrate');
