@@ -5,6 +5,7 @@ namespace Appzcoder\LaravelAdmin;
 use File;
 use Illuminate\Console\Command;
 use Symfony\Component\Process\Process;
+use Illuminate\Database\QueryException;
 
 class LaravelAdminCommand extends Command
 {
@@ -41,12 +42,12 @@ class LaravelAdminCommand extends Command
     {
         try {
             $this->call('migrate');
-        } catch (\Illuminate\Database\QueryException $e) {
+        } catch (QueryException $e) {
             $this->error($e->getMessage());
             exit();
         }
 
-        if (\App::VERSION() >= '5.2' && \App::VERSION() < '6.0') {
+        if (\App::VERSION() < '6.0') {
             $this->info("Generating the authentication scaffolding");
             $this->call('make:auth');
         }
@@ -64,10 +65,7 @@ class LaravelAdminCommand extends Command
 
         $this->info("Adding the routes");
 
-        $routeFile = app_path('Http/routes.php');
-        if (\App::VERSION() >= '5.3') {
-            $routeFile = base_path('routes/web.php');
-        }
+        $routeFile = base_path('routes/web.php');
 
         $routes =
             <<<EOD

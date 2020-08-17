@@ -35,6 +35,8 @@ An admin panel for managing users, roles, permissions & crud.
 
 4. You can generate CRUD easily through generator tool now.
 
+Note: If you are using Laravel 7+ then scaffold the authentication with bootstrap for a better experience.
+
 
 ## Usage
 
