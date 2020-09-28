@@ -24,7 +24,7 @@ An admin panel for managing users, roles, permissions & crud.
     php artisan laravel-admin:install
     ```
     > Service provider will be discovered automatically.
-3. Make sure your user model's has a ```HasRoles``` trait **app/User.php**.
+3. Make sure your user model's has a ```HasRoles``` trait **app/Models/User.php**.
     ```php
     class User extends Authenticatable
     {

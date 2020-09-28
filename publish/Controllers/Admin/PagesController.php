@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-use App\Page;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -51,9 +50,9 @@ class PagesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'title' => 'required',
-			'content' => 'required'
-		]);
+            'title' => 'required',
+            'content' => 'required'
+        ]);
         $requestData = $request->all();
         
         Page::create($requestData);
@@ -100,9 +99,9 @@ class PagesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'title' => 'required',
-			'content' => 'required'
-		]);
+            'title' => 'required',
+            'content' => 'required'
+        ]);
         $requestData = $request->all();
         
         $page = Page::findOrFail($id);

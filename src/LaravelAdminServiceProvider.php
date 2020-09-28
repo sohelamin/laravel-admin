@@ -30,7 +30,7 @@ class LaravelAdminServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__ . '/../publish/Model/' => app_path(),
+            __DIR__ . '/../publish/Models/' => app_path('Models'),
         ]);
 
         $this->publishes([
