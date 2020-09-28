@@ -71,15 +71,15 @@ class LaravelAdminCommand extends Command
 
         $routes =
             <<<EOD
-Route::get('admin', '{{ $controllerNamespace }}AdminController@index');
-Route::resource('admin/roles', '{{ $controllerNamespace }}RolesController');
-Route::resource('admin/permissions', '{{ $controllerNamespace }}PermissionsController');
-Route::resource('admin/users', '{{ $controllerNamespace }}UsersController');
-Route::resource('admin/pages', '{{ $controllerNamespace }}PagesController');
-Route::resource('admin/activitylogs', '{{ $controllerNamespace }}ActivityLogsController')->only([
+Route::get('admin', '{$controllerNamespace}AdminController@index');
+Route::resource('admin/roles', '{$controllerNamespace}RolesController');
+Route::resource('admin/permissions', '{$controllerNamespace}PermissionsController');
+Route::resource('admin/users', '{$controllerNamespace}UsersController');
+Route::resource('admin/pages', '{$controllerNamespace}PagesController');
+Route::resource('admin/activitylogs', '{$controllerNamespace}ActivityLogsController')->only([
     'index', 'show', 'destroy'
 ]);
-Route::resource('admin/settings', '{{ $controllerNamespace }}SettingsController');
+Route::resource('admin/settings', '{$controllerNamespace}SettingsController');
 Route::get('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
 Route::post('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
 
